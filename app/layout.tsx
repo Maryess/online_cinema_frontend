@@ -26,10 +26,13 @@ export default function RootLayout({
 						<Hamburger />
 					</div>
 					<div className=' text-neutral-500 text-lg'>
-						<Link className='ml-5' href='/home'>
+						<Link
+							className='ml-5 hover:text-red-300 transition-all'
+							href='/home'
+						>
 							Главная
 						</Link>
-						<Link className='ml-5' href='/home'>
+						<Link className='ml-5 hover:text-red-300 ' href='/home'>
 							Сериалы
 						</Link>
 						<Link className='ml-5' href='/home'>

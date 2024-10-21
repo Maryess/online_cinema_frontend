@@ -1,3 +1,4 @@
+import outputText from '@/hooks/encryptedWord';
 export default function Main() {
 	// const [click, setClick] = useState();
 
@@ -7,7 +8,7 @@ export default function Main() {
 
 	return (
 		<div>
-			<button className='border-l-orange-950'>click me</button>
+			<button className='border-l-orange-950'>{outputText()}</button>
 
 			{/* {click === 1 ? (
 				<div>
