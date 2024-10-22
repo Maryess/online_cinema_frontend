@@ -2,11 +2,8 @@
 
 import Hamburger from '@/components/hamburger/hamburger';
 import Search from '@/components/search/search';
-import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 // export const metadata: Metadata = {
 // 	title: 'Create Next App',
