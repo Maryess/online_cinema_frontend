@@ -1,0 +1,8 @@
+.hamburger {
+	width: 30px;
+	height: 30px;
+	color: #fff;
+	cursor: pointer;
+	position: absolute;
+	right: 15px;
+}
