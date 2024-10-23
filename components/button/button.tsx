@@ -1,11 +1,15 @@
-type Button = {
-	text: string;
-};
+import { MouseEventHandler } from 'react';
+import style from './Button.module.css';
 
-export default function Button(props: Button) {
+interface Button {
+	onclick?: MouseEventHandler<HTMLButtonElement>;
+	text: string;
+}
+
+export default function Button({ text, onclick }: Button) {
 	return (
-		<button className='text-black text-center bg-green-400 '>
-			{props.text}
+		<button onClick={onclick} className={style.button}>
+			{text}
 		</button>
 	);
 }

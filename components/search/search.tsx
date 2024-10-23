@@ -1,20 +1,23 @@
 'use client';
 
 import { useState } from 'react';
-import { LuSearch } from 'react-icons/lu';
+import { CiSearch } from 'react-icons/ci';
+import styles from './Search.module.css';
 
 export default function Search() {
-	const [search, setSearch] = useState(false);
-
-	function showSearch() {
-		setSearch(prev => !prev);
-	}
+	const [showSearch, setShowSearch] = useState(false);
 
 	return (
-		<div>
-			<LuSearch onClick={showSearch} width={60} height={60} />
-
-			{search === true ? <p className='text-white'>show</p> : <p>onShow</p>}
+		<div className={styles.section}>
+			<CiSearch
+				className={styles.svg_search}
+				onClick={() => setShowSearch(prev => !prev)}
+				width={30}
+				height={30}
+			/>
+			{showSearch === true ? (
+				<input className={styles.search} type='text' />
+			) : null}
 		</div>
 	);
 }
