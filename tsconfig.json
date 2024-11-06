@@ -30,7 +30,9 @@
 		"**/*.tsx",
 		".next/types/**/*.ts",
 		"hooks/useCoding.jsx",
-		"components/hamburger/hamburger.js"
-, "app/_app.js", "app/api/api.js"	],
+		"components/hamburger/hamburger.js",
+		"src/_app.js",
+		"src/api/api.js"
+	],
 	"exclude": ["node_modules"]
 }
