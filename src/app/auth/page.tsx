@@ -4,9 +4,12 @@ import Button from "@/src/components/button/button";
 import Field from "@/src/components/field/Field";
 import { useGetValueFiled } from "@/src/hooks/useGetValueField";
 import axiosInstance from "@/src/lib/axiosInstance";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function AuthPage() {
+	const router = useRouter();
+
 	const {
 		onChangeEmail,
 		onChangePassword,
@@ -17,21 +20,6 @@ export default function AuthPage() {
 	} = useGetValueFiled();
 
 	const [data, setData] = useState(null);
-
-	useEffect(() => {
-		const post = axiosInstance
-			.post("/auth", {
-				email: email,
-				password: password,
-				name: name,
-			})
-			.then((response) => {
-				console.log(response);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-	}, []);
 
 	return (
 		<>
@@ -44,7 +32,24 @@ export default function AuthPage() {
 					onChange={onChangePassword}
 				/>
 				<Field type="text" placeholder="Your name" onChange={onChangeName} />
-				<Button text="Sign in" />
+				<Button
+					text="Sign in"
+					onclick={(e: React.FormEvent<HTMLButtonElement>) => {
+						e.preventDefault();
+						axiosInstance
+							.post("/auth", {
+								email: email,
+								password: password,
+								name: name,
+							})
+							.then((response) => {
+								router.push("/home");
+							})
+							.catch((error) => {
+								console.log(error);
+							});
+					}}
+				/>
 			</form>
 		</>
 	);
