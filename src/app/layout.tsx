@@ -1,8 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
+import styles from "../assets/layout.module.css";
 import Hamburger from "../components/hamburger/hamburger";
 import Search from "../components/search/search";
 import { getLinks } from "../constants/getNavigtionLinks";
+import kinomix from "../public/icons/KINOMIX.svg";
+
+import Image from "next/image";
 import "./globals.css";
 export default function RootLayout({
 	children,
@@ -12,24 +15,23 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body>
-				<div className="bg-red-800 flex justify-between ml  text-neutral-500 text-lg items-center">
-					<div className="items-center">
-						<Image src={""} width={30} height={30} alt="icon-app" />
+				<div className={styles.wrapper}>
+					<div className={styles.wrapper_right_side}>
+						<Image src={kinomix} width={140} height={55} alt="" />
 					</div>
-					<div className=" text-neutral-500 text-lg flex">
+					<div className={styles.wrapper_left_side}>
 						{getLinks.map((element) => (
 							<Link
-								className="hover:text-red-300 transition-all mr-12"
+								className={styles.link}
 								key={element.text + "-key"}
 								href={element.href}
 							>
 								{element.text}
 							</Link>
 						))}
-						<div className="flex mr-20">
-							<Search />
-							<Hamburger />
-						</div>
+
+						<Search />
+						<Hamburger />
 					</div>
 				</div>
 				{children}

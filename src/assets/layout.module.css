@@ -1,0 +1,27 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #851b1b;
+	width: 100%;
+	min-height: 8vh;
+}
+
+.wrapper_right_side {
+	padding: 13px;
+}
+
+.wrapper_left_side {
+	display: flex;
+	justify-content: center;
+	margin-right: 80px;
+}
+
+.link {
+	color: #fff;
+	padding: 15px;
+}
+
+.search_content {
+	display: flex;
+}
