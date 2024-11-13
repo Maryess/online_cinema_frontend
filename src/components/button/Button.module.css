@@ -1,5 +1,7 @@
 .button {
 	background-color: #4b0000;
+	border-radius: 15px;
+
 	width: 100%;
-	height: 4vh;
+	height: 42px;
 }

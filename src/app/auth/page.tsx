@@ -10,6 +10,7 @@ import { useState } from "react";
 import styles from "../../assets/auth.module.css";
 import ellipse_left from "../../public/icons/Ellipse-left.svg";
 import ellipse_right from "../../public/icons/Ellipse-right.svg";
+// import "../globals.css";
 export default function AuthPage() {
 	const router = useRouter();
 	const [reg, setReg] = useState("Sign up");
@@ -28,7 +29,7 @@ export default function AuthPage() {
 	return (
 		<div className={styles.container}>
 			<Image className={styles.ellipse_right} src={ellipse_right} alt={""} />
-			<form className={styles.main} action="">
+			<form className={styles.form} action="">
 				<div className={styles.wrapper}>
 					{reg === "SignIn" ? <p>SignIn</p> : <p>SignIn</p>}
 				</div>
@@ -60,14 +61,16 @@ export default function AuthPage() {
 								});
 						}}
 					/>
-					<Button
-						text="SignUp"
-						onclick={(e: React.FormEvent<HTMLButtonElement>) => {
+					<button
+						className={styles.button}
+						onClick={(e: React.FormEvent<HTMLButtonElement>) => {
 							e.preventDefault();
 							setReg("SignUp");
 							console.log(reg);
 						}}
-					/>
+					>
+						Sign up
+					</button>
 				</div>
 			</form>
 			<Image className={styles.ellipse_left} src={ellipse_left} alt={""} />
