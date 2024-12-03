@@ -53,9 +53,7 @@ export default function AuthPage() {
 									password: password,
 									name: name,
 								})
-								.then((response) => {
-									router.push("/home");
-								})
+								.then((response) => {})
 								.catch((error) => {
 									console.log(error);
 								});
