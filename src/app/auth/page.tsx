@@ -7,13 +7,15 @@ import axiosInstance from "@/src/lib/axiosInstance";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import styles from "../../assets/auth.module.css";
-import ellipse_left from "../../public/icons/Ellipse-left.svg";
-import ellipse_right from "../../public/icons/Ellipse-right.svg";
+import styles from "@/src/assets/auth.module.css";
+import icon_panda_active from "@/src/public/icons/panda_active.svg";
+import icon_panda from "@/src/public/icons/panda.svg";
+
 // import "../globals.css";
 export default function AuthPage() {
 	const router = useRouter();
 	const [reg, setReg] = useState("Sign up");
+
 
 	const {
 		onChangeEmail,
@@ -22,41 +24,51 @@ export default function AuthPage() {
 		name,
 		password,
 		email,
+		svg
 	} = useGetValueFiled();
 
 	const [data, setData] = useState(null);
 
 	return (
-		<div className={styles.container}>
-			<Image className={styles.ellipse_right} src={ellipse_right} alt={""} />
-			<form className={styles.form} action="">
-				<div className={styles.wrapper}>
-					{reg === "SignIn" ? <p>SignIn</p> : <p>SignIn</p>}
-				</div>
-				<div className={styles.center}>
+		<div className={styles.container}>		
+						<div className={styles.icon_panda}>
+							{password? 
+							<Image src={icon_panda_active} alt="" width={200} height={100}/>
+							:<Image src={icon_panda} alt="" width={200} height={100} />}
+							</div> 
+					
+								
+			<form className={`${reg === "SignUp"?styles.form_reg :styles.form_auth }`} action="">
+				<span className={styles.title}>
+					{reg === "SignUp" ? 'Sign Up' : 'Sign In'}
+				</span>
+				
+				<div className={styles.fields}> 
 					<Field type="email" placeholder="Email" onChange={onChangeEmail} />
 					<Field
 						type="password"
 						placeholder="Password"
 						onChange={onChangePassword}
+					
 					/>
 					<Field type="text" placeholder="Your name" onChange={onChangeName} />
-				</div>
-				<div className={styles.bottom}>
+					</div>
+				<div className={styles.buttons}>
 					<Button
 						text="Sign in"
 						onclick={(e: React.FormEvent<HTMLButtonElement>) => {
 							e.preventDefault();
-							axiosInstance
-								.post("/auth", {
-									email: email,
-									password: password,
-									name: name,
-								})
-								.then((response) => {})
-								.catch((error) => {
-									console.log(error);
-								});
+							setReg("SignIn");
+							// axiosInstance
+							// 	.post("/auth", {
+							// 		email: email,
+							// 		password: password,
+							// 		name: name,
+							// 	})
+							// 	.then((response) => {})
+							// 	.catch((error) => {
+							// 		console.log(error);
+							// 	});
 						}}
 					/>
 					<button
@@ -71,7 +83,7 @@ export default function AuthPage() {
 					</button>
 				</div>
 			</form>
-			<Image className={styles.ellipse_left} src={ellipse_left} alt={""} />
+			
 		</div>
 	);
 }

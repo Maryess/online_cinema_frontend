@@ -7,20 +7,22 @@ interface Field {
 	text?: string;
 	onChange?: FormEventHandler<HTMLInputElement>;
 	onSubmit?:FormEventHandler<HTMLInputElement>;
+	onClick?:FormEventHandler<HTMLInputElement>;
 }
 
-export default function Field({ placeholder, type, text, onChange,onSubmit }: Field) {
+export default function Field({ placeholder, type, text, onChange,onSubmit,onClick }: Field) {
 	return (
-		<div>
+	
 			<input
 				className={styles.field}
 				type={type}
 				onChange={onChange}
 				onSubmit={onSubmit}
+				onClick={onClick}
 				placeholder={placeholder}
 			>
 				{text}
 			</input>
-		</div>
+		
 	);
 }

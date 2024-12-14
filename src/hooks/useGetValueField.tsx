@@ -5,6 +5,7 @@ export const useGetValueFiled = () => {
 	const [password, setPassword] = useState<string>("");
 	const [email, setEmail] = useState<string>("");
 	const [post, setPost] = useState<string>("");
+	const [svg,setSvg] =useState<boolean>(true);
 
 	const onChangeName = (e: React.FormEvent<HTMLInputElement>) => {
 		setName(e.currentTarget.value);
@@ -12,6 +13,7 @@ export const useGetValueFiled = () => {
 
 	const onChangePassword = (e: React.FormEvent<HTMLInputElement>) => {
 		setPassword(e.currentTarget.value);
+
 	};
 
 	const onChangeEmail = (e: React.FormEvent<HTMLInputElement>) => {
@@ -28,5 +30,6 @@ export const useGetValueFiled = () => {
 		name,
 		password,
 		email,
+		svg
 	};
 };
