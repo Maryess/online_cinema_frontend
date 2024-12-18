@@ -1,0 +1,19 @@
+.container {
+	width: 100%;
+	min-height: 100vh;
+}
+
+.header {
+}
+
+.img_movie {
+	background-color: #fff;
+	height: 380px;
+	border-bottom-right: 20px;
+}
+
+.info {
+	font-size: 25px;
+	width: 88%;
+	margin: 0 auto;
+}
