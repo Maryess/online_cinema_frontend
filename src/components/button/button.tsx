@@ -1,14 +1,18 @@
-import { MouseEventHandler } from 'react';
-import style from './Button.module.css';
+import { MouseEventHandler } from "react";
+import styles from "./Button.module.css";
 
 interface Button {
 	onclick?: MouseEventHandler<HTMLButtonElement>;
 	text: string;
+	active: string;
 }
 
-export default function Button({ text, onclick }: Button) {
+export default function Button({ text, onclick, active }: Button) {
 	return (
-		<button onClick={onclick} className={style.button}>
+		<button
+			onClick={onclick}
+			className={`${text === "Sign up" ? styles.button_active : styles.button}`}
+		>
 			{text}
 		</button>
 	);

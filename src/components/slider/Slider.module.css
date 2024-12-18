@@ -1,0 +1,28 @@
+.slider {
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	width: 90%;
+	border-radius: 25px;
+	height: 400px;
+}
+
+.content {
+	display: flex;
+	gap: 44px;
+}
+
+.element {
+	margin: 0 15px 0 15px;
+	background-color: #fff;
+	width: 220px;
+	height: 302px;
+	border-radius: 25px;
+}
+
+/* @media(max-width:;){
+	.element{
+		width: 220px;
+		height: 302px;
+	}
+} */
