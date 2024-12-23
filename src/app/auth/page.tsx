@@ -3,7 +3,9 @@
 import styles from "@/src/assets/auth.module.css";
 import Button from "@/src/components/Button/button";
 import Field from "@/src/components/field/Field";
+import Success from "@/src/components/notification/success/Success";
 import { useGetValueFiled } from "@/src/hooks/useGetValueField";
+import axiosInstance from "@/src/lib/axiosInstance";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -59,16 +61,20 @@ export default function AuthPage() {
 						onclick={(e: React.FormEvent<HTMLButtonElement>) => {
 							e.preventDefault();
 							setReg("SignIn");
-							// axiosInstance
-							// 	.post("/auth", {
-							// 		email: email,
-							// 		password: password,
-							// 		name: name,
-							// 	})
-							// 	.then((response) => {})
-							// 	.catch((error) => {
-							// 		console.log(error);
-							// 	});
+							setBtnActive("");
+							axiosInstance
+								.post("/auth", {
+									email: email,
+									password: password,
+									name: name,
+								})
+								.then((response) => {
+									router.push("/home");
+								})
+								.catch((error) => {
+									alert(error);
+									return <Success text={error} />;
+								});
 						}}
 					/>
 					<Button
