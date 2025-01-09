@@ -6,19 +6,17 @@ import axiosInstance from "@/src/lib/axiosInstance";
 import { useEffect, useState } from "react";
 
 export default function Movie() {
-	const [movies, setMovies] = useState<any[]>([]);
-
-	useEffect(() => {
-		axiosInstance
-			.get("/movie")
-			.then((response) => {
-				setMovies(response.data);
-
-			})
-			.catch((error) => {
-				console.log(`Error: ${error}`);
-			});
-	},[]);
+	// const [movies, setMovies] = useState<any[]>([]);
+	// useEffect(() => {
+	// 	axiosInstance
+	// 		.get("/movie")
+	// 		.then((response) => {
+	// 			setMovies(response.data);
+	// 		})
+	// 		.catch((error) => {
+	// 			console.log(`Error: ${error}`);
+	// 		});
+	// },[]);
 
 	return (
 		<div className={styles.container}>
