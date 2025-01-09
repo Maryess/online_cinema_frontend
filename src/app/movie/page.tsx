@@ -6,23 +6,26 @@ import axiosInstance from "@/src/lib/axiosInstance";
 import { useEffect, useState } from "react";
 
 export default function Movie() {
-	const [newData, setData] = useState(null);
+	const [movies, setMovies] = useState<any[]>([]);
 
 	useEffect(() => {
 		axiosInstance
 			.get("/movie")
 			.then((response) => {
-				setData(response.data);
+				setMovies(response.data);
+
 			})
 			.catch((error) => {
 				console.log(`Error: ${error}`);
 			});
-	});
+	},[]);
 
 	return (
 		<div className={styles.container}>
 			<div className={styles.header}>
-				<div className={styles.img_movie}></div>
+				<div className={styles.image}></div>
+				<div className={styles.title}>
+				</div>	 
 			</div>
 			<div className={styles.info}>
 				dfsfdsgsgsgsd gdsg dsg sg sdg gd hgfh fhdgsf g d dfsfdsgsgsgsd gdsg dsg

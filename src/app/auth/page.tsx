@@ -84,6 +84,19 @@ export default function AuthPage() {
 							e.preventDefault();
 							setReg("SignUp");
 							setBtnActive("active");
+							// axiosInstance
+							// 	.post("/auth/register", {
+							// 		email: email,
+							// 		password: password,
+							// 		name: name,
+							// 	})
+							// 	.then((response) => {
+							// 		router.push("/home");
+							// 	})
+							// 	.catch((error) => {
+							// 		alert(error);
+							// 		return <Success text={error} />;
+							// 	});
 						}}
 					/>
 				</div>
