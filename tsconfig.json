@@ -21,7 +21,9 @@
 		"paths": {
 			"@/*": ["./*"],
 			"@pages/*": ["./pages/*"],
-			"@public/*": ["./public/*"]
+			"@public/*": ["./public/*"],
+			"@components" : ["./app/components/*"],
+			"@styles" : ["./styles/*"]
 		}
 	},
 	"include": [

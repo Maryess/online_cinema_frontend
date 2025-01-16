@@ -1,0 +1,21 @@
+.header{
+    background-color:#16171C;
+    height:250px;
+}
+
+.scroll_movies{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+ 
+    .active_movie{
+        width:550px;
+        height:200px;
+    }
+    .hidden_movie{
+        width:250px;
+        height:100px;
+    }
+   
+}
