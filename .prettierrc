@@ -1,0 +1,19 @@
+{
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "useTabs": true,
+    "semi": true,
+    "singleQuote": false,
+    "importOrder":[
+        "<THIRD_PARTY_MODULES>",
+        "^@/screens/(.*)$",
+        "^@/components/(.*)$",
+        "^@/components/ui/(.*)$",
+        "^@/hooks/(.*)$",
+        "^../(.*)",
+        "^./(.*)",
+        "(.scss)$"
+    ],
+    "importOrderSeparation":true,
+    "importOrderSortSpecifiers":true
+}
