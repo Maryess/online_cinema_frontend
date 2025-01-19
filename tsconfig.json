@@ -17,13 +17,17 @@
 				"name": "next"
 			}
 		],
-		"baseUrl": ".",
+		"baseUrl": "./app/",
 		"paths": {
-			"@/*": ["./*"],
-			"@pages/*": ["./pages/*"],
-			"@public/*": ["./public/*"],
-			"@components" : ["./app/components/*"],
-			"@styles" : ["./styles/*"]
+			"@/pages/*": ["./pages/*"],
+			"@/public/*": ["./public/*"],
+			"@/ui/*" : [".components/ui/*"],
+			"@/screens/*" : [".components/screens*"],
+
+			"@/hooks/*" : [".hooks/*"],
+			"@/constants/*" : [".constants/*"],
+
+			"@/styles/*" : ["./styles/*"]
 		}
 	},
 	"include": [
