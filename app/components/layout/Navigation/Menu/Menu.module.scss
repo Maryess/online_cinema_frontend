@@ -1,0 +1,30 @@
+$width-content:300px;
+
+.menu {
+    max-width: $width-content;
+    margin:60px 0 0 40px;
+
+  >ul{
+    @apply text-gray-700;
+    margin-bottom: 30px;
+    font-weight: 500;
+
+    .title{
+        margin-bottom:15px;
+        font-size: 12px;
+        @apply uppercase text-gray-600
+    }
+
+    >li{
+        margin-bottom:10px;
+        font-size: 14px;
+
+        border-right: 4;
+
+        .link{
+             @apply hover:text-gray-600
+        }
+    }
+  }
+
+}

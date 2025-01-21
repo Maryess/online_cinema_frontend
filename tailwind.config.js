@@ -89,7 +89,11 @@ module.exports = {
 					transition: 'background-color .3s ease-in-out',
 					'&:hover':{
 						backgroundColor: '#ff0009'
-					}
+					},
+				'input-field': {
+					borderRadius:'0.65rem'
+					
+				}
 			}
 			}),
 			addUtilities({

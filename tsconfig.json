@@ -1,44 +1,61 @@
 {
-	"compilerOptions": {
-		"lib": ["dom", "dom.iterable", "esnext"],
-		"allowJs": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"noEmit": true,
-		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "bundler",
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"jsx": "preserve",
-		"incremental": true,
-		"plugins": [
-			{
-				"name": "next"
-			}
-		],
-		"baseUrl": "./app/",
-		"paths": {
-			"@/pages/*": ["./pages/*"],
-			"@/public/*": ["./public/*"],
-			"@/ui/*" : [".components/ui/*"],
-			"@/screens/*" : [".components/screens*"],
-
-			"@/hooks/*" : [".hooks/*"],
-			"@/constants/*" : [".constants/*"],
-
-			"@/styles/*" : ["./styles/*"]
-		}
-	},
-	"include": [
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		".next/types/**/*.ts",
-		"hooks/useCoding.jsx",
-		"components/hamburger/hamburger.js",
-		"src/_app.js",
-		"src/api/api.js"
-	],
-	"exclude": ["node_modules"]
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": "./app/",
+    "paths": {
+      "@/components/*": [
+        ".components/*"
+      ],
+      "@/pages/*": [
+        "./pages/*"
+      ],
+      "@/public/*": [
+        "./public/*"
+      ],
+      "@/ui/*": [
+        ".components/ui/*"
+      ],
+      "@/screens/*": [
+        ".components/screens*"
+      ],
+      "@/hooks/*": [
+        ".hooks/*"
+      ],
+      "@/constants/*": [
+        ".constants/*"
+      ],
+      "@/styles/*": [
+        "./styles/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
