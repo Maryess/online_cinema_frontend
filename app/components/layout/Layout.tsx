@@ -3,7 +3,7 @@ import styles from "./Layout.module.scss"
 import Navigation from "./Navigation/Navigation"
 import SideBar from "./Sidebar/SideBar"
 
-const Layout = ({children}:{children:React.ReactNode}) => {
+const Layout:FC<{children: React.ReactNode}> = ({children}) => {
     return (
     <div className={styles.layout}> 
     <Navigation />

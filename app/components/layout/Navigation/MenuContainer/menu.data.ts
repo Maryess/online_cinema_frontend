@@ -1,6 +1,6 @@
-import { IMenu } from "./Menu.interface"
+import { IMenu } from "./menu.interface"
 
-export const firstItem:IMenu = {
+export const menuItem:IMenu = {
     title:'Menu',
     item:[{
         icon:'',
@@ -24,7 +24,7 @@ export const firstItem:IMenu = {
     }]
   }
 
-export const secondItem:IMenu = {
+export const genreItem:IMenu = {
     title:'Popular genres',
     item:[
         {
@@ -50,7 +50,7 @@ export const secondItem:IMenu = {
     ]
 }
 
-export const thirdItem:IMenu = {
+export const userItem:IMenu = {
     title:'General',
     item:[{
         icon:'',
@@ -58,3 +58,5 @@ export const thirdItem:IMenu = {
         link:'/login'
     }]
 }
+
+export const items = [menuItem,genreItem,userItem]
