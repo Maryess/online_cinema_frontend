@@ -2,27 +2,29 @@ $width-content:300px;
 
 .menu {
     max-width: $width-content;
-    margin:60px 0 0 40px;
-
-  >ul{
-    @apply text-gray-700;
-    margin-bottom: 30px;
-    font-weight: 500;
-
-    .title{
-        margin-bottom:15px;
-        font-size: 12px;
-        @apply uppercase text-gray-600
-    }
-
-    >li{
-        margin-bottom:10px;
-        font-size: 14px;
-
-        .link{
-             @apply hover:text-gray-600
-        }
-    }
+    .heading{
+      @apply uppercase text-gray-500 mb-4;
   }
 
+}
+
+.ul{
+  @apply px-8 text-gray-600 font-medium mb-6;
+
+  >li{
+    @apply hover:text-gray-500;
+
+    .link_content{
+      @apply flex items-center mb-4;
+
+
+      >span{
+      @apply ml-2;
+      }
+
+     &.active{
+      @apply border-r-primary;
+      }
+    } 
+  }
 }

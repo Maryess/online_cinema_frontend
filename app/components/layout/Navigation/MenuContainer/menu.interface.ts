@@ -1,5 +1,7 @@
+import { TypeMaterialIcon } from "shared/types/icon.types";
+
 export interface IMenuItem {
-    icon: string;
+    icon: TypeMaterialIcon;
     name:string;
     link:string;
 }
