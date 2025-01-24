@@ -1,0 +1,30 @@
+$width-content:300px;
+
+.menu {
+    max-width: $width-content;
+    .heading{
+      @apply uppercase text-gray-500 mb-4;
+  }
+
+}
+
+.ul{
+  @apply px-8 text-gray-600 font-medium mb-6;
+
+  >li{
+    @apply hover:text-gray-500;
+
+    .link_content{
+      @apply flex items-center mb-4;
+
+
+      >span{
+      @apply ml-2;
+      }
+
+     &.active{
+      @apply border-r-primary;
+      }
+    } 
+  }
+}

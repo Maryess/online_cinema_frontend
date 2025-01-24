@@ -1,5 +1,11 @@
-const Page = () =>{
-    return <div>page</div>
+import Home from "components/screens/home/Home"
+import { NextPage } from "next"
+
+
+const HomePage: NextPage= () =>{
+    return <div>
+       <Home/>
+    </div>
 }
 
-export default Page
+export default HomePage

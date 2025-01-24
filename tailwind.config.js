@@ -6,9 +6,8 @@ const primary = '#E30B13'
 
 module.exports = {
 	content: [
-		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./components/**/*.{js,ts,jsx,tsx,mdx}",
-		"./src/**/*.{js,ts,jsx,tsx,mdx}",
+		'./pages/**/*.{js,ts,jsx,tsx}',
+		'./app/components/**/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
 		colors : {
@@ -89,7 +88,11 @@ module.exports = {
 					transition: 'background-color .3s ease-in-out',
 					'&:hover':{
 						backgroundColor: '#ff0009'
-					}
+					},
+				'input-field': {
+					borderRadius:'0.65rem'
+					
+				}
 			}
 			}),
 			addUtilities({
