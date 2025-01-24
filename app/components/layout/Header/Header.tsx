@@ -1,9 +1,8 @@
-import Link from "next/link"
-import styles from "./SideBar.module.scss"
 import { FC } from "react"
 import Field from "components/ui/field/Field"
+import styles from './Header.module.scss'
 
-const SideBar:FC = () => {
+const Header:FC = () => {
     return <div>
         <Field 
         type="text"
@@ -13,4 +12,4 @@ const SideBar:FC = () => {
     </div>
 }
 
-export default SideBar
+export default Header

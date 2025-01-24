@@ -3,8 +3,8 @@ import { NextPage } from "next"
 import { FC } from "react"
 
  const Home:FC = () => {
-    return (<Layout>Home page
-    </Layout>)
+    return (<div>Home page
+    </div>)
  }
 
  export default Home

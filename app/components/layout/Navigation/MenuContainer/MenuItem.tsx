@@ -8,7 +8,6 @@ import MaterialIcon from "components/ui/MaterialIcon"
 
 
 const MenuItem:FC<{itemMenu:IMenuItem}>=({itemMenu}) => {
-
     const {asPath} = useRouter()
 
   return (
