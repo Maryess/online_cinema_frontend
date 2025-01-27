@@ -1,3 +1,4 @@
+import MaterialIcon from '../MaterialIcon';
 import styles from './Field.module.scss'
 
 interface IField {

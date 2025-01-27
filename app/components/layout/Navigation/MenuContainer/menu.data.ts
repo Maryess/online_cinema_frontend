@@ -29,5 +29,3 @@ export const userItem:IMenu = {
     title:'General',
     item:[]
 }
-
-export const items = [menuItem,userItem]

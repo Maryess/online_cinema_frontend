@@ -1,4 +1,13 @@
+.header {
+    @apply py-layout;
+    .search{
+        @apply w-32 h-9 border border-gray-600 bg-gray-700 rounded-md mr-6 outline-none placeholder:text-opacity-70 text-gray-300 text-start ;
+    }
 
+    &:active{
+        @apply absolute w-16 h-32 right-10 top-12 
+    }
+}
 
 
 
