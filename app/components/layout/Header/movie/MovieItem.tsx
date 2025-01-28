@@ -10,7 +10,7 @@ const MovieItem:FC<{itemMovie: IMovieItem}>= ({itemMovie}) => {
   return (
     <div>
         <li className={styles.movie}>
-            <img className={styles.poster} src={itemMovie.poster} alt="movie cart" width={130} height={200}/>
+            <img className={styles.poster} src={itemMovie.poster} alt="movie cart" width={60} height={120}/>
             <div className={styles.name}>{itemMovie.name}</div>
         </li>
     </div>

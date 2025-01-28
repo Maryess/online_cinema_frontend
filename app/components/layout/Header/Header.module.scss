@@ -1,11 +1,23 @@
 .header {
     @apply py-layout;
     .search{
-        @apply w-32 h-9 border border-gray-600 bg-gray-700 rounded-md mr-6 outline-none placeholder:text-opacity-70 text-gray-300 text-start ;
+        @apply w-32 h-9 border border-gray-600 bg-gray-700 rounded-md mr-6 outline-none placeholder:text-opacity-70 text-gray-300 text-start  ;
     }
 
-    &:active{
+    /* &:active{
         @apply absolute w-16 h-32 right-10 top-12 
+    } */
+
+    .movie{
+        @apply flex mt-8 ;
+
+        .poster{
+            @apply rounded-md ;
+        }
+
+        .name{
+            @apply text-gray-300 ml-4 text-ellipsis;
+        }
     }
 }
 

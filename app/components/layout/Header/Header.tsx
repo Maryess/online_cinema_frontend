@@ -11,9 +11,9 @@ const Header:FC = () => {
 
     return <div className={styles.header}>
 
-       <Search placeholder="Search"/>
+       <Search/>
        <div className={cn({[styles.active]: show === true})}>
-        <Movie />
+        {/* <Movie /> */}
 
        </div>
     </div>
