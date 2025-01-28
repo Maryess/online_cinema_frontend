@@ -2,38 +2,41 @@ import { FC, useState } from "react"
 import styles from './Header.module.scss'
 import { useGetMovie } from "./movie/useGetMovie";
 import MovieItem from "./movie/MovieItem";
-
+import MaterialIcon from "components/ui/MaterialIcon";
 
 const Search:FC = (
 ) => {
-  let check = false
   const {data} = useGetMovie()
   const [isCheck,setIsCheck] = useState<boolean>(false)
   const [term,setTerm] = useState<string>("")
 
 
-  const change = (val:boolean) =>{
+  const changeValue = (val:boolean) =>{
     setIsCheck( val => !val)
   }
 
   const getValue = (e:string) => {
+
     setTerm(e)
     data?.map((el)=>{
-      if(el.name === term){
-        change(isCheck)
-        return console.log(isCheck)
-      }
+      for(const element of el.name ){
+        if(element === term){
+          changeValue(isCheck)
+        }
+      } 
     })
   }
 
   return ( <div>
+        {/* <MaterialIcon classname={styles.icon} name="MdSearch" /> */}
         <input onChange={(e)=>{
           getValue(e.target.value)
         }} className={styles.search}  placeholder="Search" />
         {data?.map((el)=>{
-          return isCheck === true && term === el.name ? <MovieItem key={el.name} itemMovie={{
+          return isCheck === true  ? <MovieItem key={el.name} itemMovie={{
             name:el.name,
-            poster:el.poster
+            poster:el.poster,
+            genres:el.genres
           }}/> :null
         })}
         

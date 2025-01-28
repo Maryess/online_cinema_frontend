@@ -4,18 +4,13 @@ import Search from "./Search"
 import cn from "classnames"
 import MovieItem from "./movie/MovieItem"
 import Movie from "./movie/Movie"
+import Heading from "components/ui/heading/Heading"
+import MovieContainer from "./movie/MovieContainer"
 
 const Header:FC = () => {
 
-    const [show,setShow] = useState<boolean>(false)
-
     return <div className={styles.header}>
-
-       <Search/>
-       <div className={cn({[styles.active]: show === true})}>
-        {/* <Movie /> */}
-
-       </div>
+      <MovieContainer />
     </div>
 }
 

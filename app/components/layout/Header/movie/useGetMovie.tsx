@@ -9,7 +9,8 @@ export const useGetMovie = () =>{
                 select: ({data}) => 
                     data.map((movie)=>({
                         poster:movie.poster,
-                        name:movie.name
+                        name:movie.name,
+                        genres: movie.genres
                     }as IMovieItem ))
                 }
             )
