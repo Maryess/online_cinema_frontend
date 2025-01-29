@@ -1,4 +1,34 @@
+$bar-width:20%;
 
+.header {
+    width: $bar-width;
+    @apply py-layout;
+
+
+    .search{
+        @apply w-32 h-9 ml-7 border border-gray-800 bg-gray-900 
+        rounded-2xl outline-none placeholder:text-opacity-70
+         text-gray-300 text-start ;
+    }
+
+    .movie{
+        @apply flex mt-8 ml-7 animate-fade;
+    
+
+        .poster{
+            @apply rounded-image ;
+        }
+
+        .information{
+
+            .genres{
+                @apply text-gray-500 text-xs text-opacity-30
+            }
+
+            @apply text-gray-300 ml-4 text-ellipsis outline-none;
+        }
+    }
+}
 
 
 

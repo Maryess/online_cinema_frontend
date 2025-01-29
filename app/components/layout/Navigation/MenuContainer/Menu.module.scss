@@ -9,7 +9,11 @@ $width-content:300px;
 }
 
 .ul{
-  @apply px-8 text-gray-600 font-medium mb-6;
+  @apply px-8 text-gray-600 mb-10;
+
+  .heading{
+    @apply text-xs font-medium;
+  }
 
   >li{
     @apply hover:text-gray-500;
