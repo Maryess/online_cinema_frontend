@@ -1,7 +1,7 @@
 import { FC, useState } from "react"
 import styles from './Header.module.scss'
-import { useGetMovie } from "./movie/useGetMovie";
-import MovieItem from "./movie/MovieItem";
+import { useGetMovie } from "./popular-movie/useGetMovie";
+import MovieItem from "./popular-movie/PopularMovieItem";
 import MaterialIcon from "components/ui/MaterialIcon";
 
 const Search:FC = (

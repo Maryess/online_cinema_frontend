@@ -2,15 +2,16 @@ import { FC, useState } from "react"
 import styles from './Header.module.scss'
 import Search from "./Search"
 import cn from "classnames"
-import MovieItem from "./movie/MovieItem"
-import Movie from "./movie/Movie"
+import MovieItem from "./popular-movie/PopularMovieItem"
+import Movie from "./popular-movie/PopularMovie"
 import Heading from "components/ui/heading/Heading"
-import MovieContainer from "./movie/MovieContainer"
+import Popula from "./popular-movie/PopularMovieContainer"
+import PopularMovieContainer from "./popular-movie/PopularMovieContainer"
 
 const Header:FC = () => {
 
     return <div className={styles.header}>
-      <MovieContainer />
+      <PopularMovieContainer />
     </div>
 }
 

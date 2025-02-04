@@ -1,11 +1,13 @@
-import Layout from "components/layout/Layout"
 import Heading from "components/ui/heading/Heading"
-import { NextPage } from "next"
 import { FC } from "react"
+import Meta from "utils/meta/Meta"
 
  const Home:FC = () => {
-    return <div> <Heading title="Watch movie online"/>
-    </div>
+   return (
+      <Meta title="Watch movie online" description="Watch movies and TV shows free in your browser">
+         <Heading title="Watch movie online" className="text-gray-300"/>
+      </Meta>
+   ) 
  }
 
  export default Home

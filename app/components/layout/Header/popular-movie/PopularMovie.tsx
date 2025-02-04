@@ -1,10 +1,11 @@
 import { FC, useState } from "react"
-import MovieItem from "./MovieItem"
+import MovieItem from "./PopularMovieItem"
 import { useGetMovie } from "./useGetMovie"
 import SkeletonLoader from "components/ui/SkeletonLoader"
 import styles from '../Header.module.scss'
+import PopularMovieItem from "./PopularMovieItem"
 
-const Movie:FC = () => {
+const PopularMovie:FC = () => {
     const {isLoading,data} = useGetMovie()
       const [isCheck,setIsCheck] = useState<boolean>(false)
       const [term,setTerm] = useState<string>("")
@@ -29,7 +30,7 @@ const Movie:FC = () => {
     return ( isLoading? <SkeletonLoader count={3} className="h-9 mt-4"/> :
         <ul className={styles.ul}>
         {data?.map((el)=>{
-          return isCheck === true  ? <MovieItem key={el.name} itemMovie={{
+          return isCheck === true  ? <PopularMovieItem key={el.name} itemMovie={{
             name:el.name,
             poster:el.poster,
             genres:el.genres
@@ -39,4 +40,4 @@ const Movie:FC = () => {
     )
 }
 
-export default Movie
+export default PopularMovie

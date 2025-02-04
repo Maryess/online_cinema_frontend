@@ -2,7 +2,7 @@ import styles from "../Header.module.scss"
 import { FC } from "react"
 import { IMovieItem } from "./movie.interface"
 
-const MovieItem:FC<{itemMovie: IMovieItem}>= ({itemMovie}) => {
+const PopularMovieItem:FC<{itemMovie: IMovieItem}>= ({itemMovie}) => {
 
   return (
     <div>
@@ -17,4 +17,4 @@ const MovieItem:FC<{itemMovie: IMovieItem}>= ({itemMovie}) => {
   )
 }
 
-export default MovieItem
+export default PopularMovieItem

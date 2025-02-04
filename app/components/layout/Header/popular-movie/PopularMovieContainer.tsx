@@ -1,15 +1,16 @@
 import Menu from "components/layout/Navigation/MenuContainer/Menu"
 import { FC } from "react"
-import Movie from "./Movie"
+import Movie from "./PopularMovie"
 import Search from "../Search"
+import PopularMovie from "./PopularMovie"
 
-const MovieContainer :FC= () => {
+const PopularMovieContainer :FC= () => {
     return (
     <div className="mb-4">
         <Search />
-        <Movie />
+        <PopularMovie />
     </div>
   )
 }
 
-export default MovieContainer
+export default PopularMovieContainer

@@ -8,7 +8,7 @@ import { IMovie } from "shared/types/movie.types";
      baseQuery: fetchBaseQuery({ baseUrl: SERVER_URL }),
      endpoints: (build) => ({
        getMovies: build.query<IMovie, number>({
-         query: () => `movie`
+         query: (limit) => `movie?limit=${limit}`
       }),
      }),
     });
