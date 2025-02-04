@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import MaterialIcon from '../MaterialIcon';
 import styles from './Field.module.scss'
 
@@ -7,10 +8,10 @@ interface IField {
     type:string;
 }
 
-const Field = (props:IField) => {
+const Field:FC <IField>= ({placeholder,text,type}) => {
   return (
-    <input type={props.type} className={styles.field} placeholder={props.placeholder}>
-        {props.text}
+    <input type={type} className={styles.field} placeholder={placeholder}>
+        {text}
     </input>
   )
 }
