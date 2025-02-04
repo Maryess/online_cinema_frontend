@@ -1,0 +1,1 @@
+export const accentColor = '#E30B13'
