@@ -4,9 +4,10 @@ import { DiVim } from "react-icons/di"
 import Menu from "../Menu"
 import Skeleton from "react-loading-skeleton"
 import SkeletonLoader from "components/ui/SkeletonLoader"
+import { useGenreApi } from "hooks/useGenreApi"
 
 const Genres = () => {
-    const {isLoading, data} = useGetGenres()
+    const {isLoading, data} = useGenreApi()
 
 
   return isLoading? <div className="mx-6 mb-6"> <SkeletonLoader count={5} className="h-7 mt-6"/></div> :

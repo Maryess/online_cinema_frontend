@@ -1,10 +1,10 @@
 import { useQuery } from "react-query"
 import { GenreService } from "services/GenreService"
-import { IMenuItem } from "../menu.interface"
 import { getGenreUrl } from "config/api.config"
+import { IMenuItem } from "components/layout/Navigation/MenuContainer/menu.interface"
 
 
-export const useGetGenres = () => {
+export const useGenreApi = () => {
 
     const queryData = useQuery('genres menu', ()=>
         GenreService.getAll(),{

@@ -8,6 +8,7 @@ const MovieList:FC<IMovieList> = ({title,movies}) => {
 
   return (
      <div className={styles.movies}>
+      <span>{title}</span>
       { movies.map((el)=>{
         return <MovieItem key={el.id} movie={el} />
       })}

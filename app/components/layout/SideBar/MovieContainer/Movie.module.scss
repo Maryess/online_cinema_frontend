@@ -1,14 +1,23 @@
 .container{
     @apply mt-5;
 
+
+    .button{
+        @apply text-white text-sm bg-primary rounded-image outline-none w-full h-8 mt-4;
+    }
+
     .movies{
         @apply flex flex-col;
+
+        >span{
+            @apply text-white text-lg;
+        }
         
     }
 
     .content{
       
-        @apply flex mt-3;
+        @apply flex mt-4;
         >a{  
             >img{
                 @apply rounded-image;

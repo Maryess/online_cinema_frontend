@@ -26,9 +26,13 @@ module.exports = {
 				800: '#242529',
 				900: '#191B1F',
 				950: '#101215'
-			}
+			},
+			
 		},
 		extend: {
+			backgroundImage: {
+				'linear-movie': 'linear-gradient(to left , transparent,#101215 50% )'
+			  },
 			spacing: {
 				0.5: '0.12rem',
 				layout: '2.75rem',

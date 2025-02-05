@@ -13,6 +13,7 @@ const MoviesContainer:FC = () => {
   return (
     <div className={styles.container}>
      <PopularMovie />
+     <button className={styles.button}>See more</button>   
     </div>
   )
 }

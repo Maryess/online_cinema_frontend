@@ -1,12 +1,19 @@
-import Heading from "components/ui/heading/Heading"
 import { FC } from "react"
-import { toastr } from "react-redux-toastr"
 import Meta from "utils/meta/Meta"
+import TrendingContainer from "./TrendingMovie/TrendingContainer"
+import BestActorsContainer from "./BestActors/BestActorsContainer"
+import WatchMovieContainer from "./WatchMovie/WatchMovieContainer"
+import styles from './Home.module.scss'
+
 
  const Home:FC = () => {
    return (
       <Meta title="Watch movie online" description="Watch movies and TV shows free in your browser">
-         <Heading title="Watch movie online" className="text-gray-300"/>
+         <div className={styles.home}>
+         <WatchMovieContainer/>
+         <TrendingContainer/>
+         <BestActorsContainer/>
+         </div>
       </Meta>
    ) 
  }
