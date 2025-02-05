@@ -11,11 +11,13 @@ const SearchList:FC<{movies:IMovie[]}> = ({movies}) => {
        {movies.length? 
         movies.map((el)=>{
             return <Link key={el.id} href={getMovieUrl(el.slug)}>
-                    <Image src={el.poster} width={50} height={50} alt={el.name} draggable={false} objectFit='cover' objectPosition='top' />
+              <div className={styles.a}>
+                    <img src={el.poster} width={100} height={100} alt={el.name} draggable={false} />
                     <span>{el.name}</span>
+              </div>
             </Link>
         }):
-        <div className='text-white text-center'>Movie not found!</div>   
+        <div className='text-white text-center my-4'>Movie not found!</div>   
     }
     </div>
   )

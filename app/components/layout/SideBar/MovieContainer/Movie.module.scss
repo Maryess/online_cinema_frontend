@@ -1,0 +1,28 @@
+.container{
+    @apply mt-5;
+
+    .movies{
+        @apply flex flex-col;
+        
+    }
+
+    .content{
+      
+        @apply flex mt-3;
+        >a{  
+            >img{
+                @apply rounded-image;
+                max-width:65px;
+                max-height:97px;
+            }
+        }
+
+        .info{
+            @apply text-white truncate text-sm ml-3;
+
+            .genre{
+                @apply text-gray-600 text-xs mt-1;
+            }
+        }
+    }
+}

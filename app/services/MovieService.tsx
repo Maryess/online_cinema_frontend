@@ -3,12 +3,18 @@ import { getMovieUrl } from "config/api.config"
 import { IMovie } from "shared/types/movie.types"
 
 export const MovieService ={
-    async getAll (searchTerm?:string){
+    async getAllSearch (searchTerm?:string){
        return AxiosInstance.get<IMovie[]>(getMovieUrl(''),{
         params:searchTerm?{
             searchTerm
         }:
-        {}
+        {
+
+        }
        })
+    },
+
+    async getAll(){
+        return AxiosInstance.get<IMovie[]>(getMovieUrl(''))
     }
 }

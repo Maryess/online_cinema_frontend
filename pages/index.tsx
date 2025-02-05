@@ -8,7 +8,6 @@ const HomePage: NextPage= () =>{
     
     return <div>
        <Home/>
-       <Auth/>
     </div>
 }
 
