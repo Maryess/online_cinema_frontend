@@ -5,7 +5,7 @@ import { IMovie } from 'shared/types/movie.types'
 import WatchMovieList from './WatchMovieList'
 import { useMovieApi } from 'hooks/useMovieApi'
 
-const WatchMovieContainer:FC<{movies:IMovie[]}>= ({movies}) => {
+const WatchMovieContainer:FC<{movies:IMovie[]}>= () => {
 
   const {data} = useMovieApi()
 

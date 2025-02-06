@@ -31,7 +31,7 @@ module.exports = {
 		},
 		extend: {
 			backgroundImage: {
-				'linear-movie': 'linear-gradient(to left , transparent,#101215 50% )'
+				'linear-movie': 'linear-gradient(to left , transparent,#101215 75% )'
 			  },
 			spacing: {
 				0.5: '0.12rem',

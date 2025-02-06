@@ -13,7 +13,7 @@ export const useGenreApi = () => {
                 link:getGenreUrl(genre.slug),
                 name:genre.name
             } as IMenuItem) )).splice(0, 4)
-})
+        })
 
     return queryData
 }

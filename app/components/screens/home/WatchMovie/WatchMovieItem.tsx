@@ -11,7 +11,9 @@ const WatchMovieItem:FC<{movie:IMovie}> = ({movie}) => {
             <div>
             <div className={styles.info}>
                 <h1>{movie.name}</h1>
-                <span>Fantasy,Action movie</span>
+                    {movie.genres.map((el)=>{
+                        return <span key={el.id}>{el.name}</span>
+                    })}
                 <button>Watch</button>
             </div>
             </div>

@@ -17,7 +17,7 @@
                  @apply absolute p-5 bottom-0 flex flex-col;
 
                 >h1{
-                    @apply text-white uppercase text-xl truncate;
+                    @apply text-white uppercase text-2xl truncate font-bold;
                 }
 
                 >span{
@@ -30,6 +30,15 @@
             }
            }
 
+        }
+    }
+
+    .center, .footer{
+        .image{
+            @apply rounded-image mr-5;
+        }
+        .list{
+            @apply flex;
         }
     }
 }
