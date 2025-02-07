@@ -1,0 +1,45 @@
+.home{
+    @apply px-7;
+
+    .wrapper{
+       
+        >a{
+            @apply relative;
+            >img{
+               @apply rounded-3xl; 
+            }
+
+           >div{
+            width:50%;
+            @apply absolute bottom-0 text-white h-full bg-linear-movie rounded-3xl border-none ; 
+            .info{
+                width:50%;
+                 @apply absolute p-5 bottom-0 flex flex-col;
+
+                >h1{
+                    @apply text-white uppercase text-2xl truncate font-bold;
+                }
+
+                >span{
+                    @apply text-xs text-gray-600;
+                }
+
+                >button{
+                    @apply bg-primary w-16 h-8 rounded-image text-xs mt-3;
+                }
+            }
+           }
+
+        }
+    }
+
+    .center, .footer{
+        .image{
+            @apply rounded-image mr-5;
+        }
+        .list{
+            @apply flex;
+        }
+    }
+}
+

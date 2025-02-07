@@ -1,21 +1,11 @@
 import Layout from "components/layout/Layout"
 import React, { FC } from "react"
 import { QueryClient, QueryClientProvider } from "react-query"
+import ReduxToastr from "./ReduxToastr"
 import { Provider } from "react-redux"
-import { configureStore } from "@reduxjs/toolkit";
-import { movieApi } from "api/movie.api";
+import { store } from "store/store"
+import HeadProvider from "./HeadProvider"
 
-
-export const makeStore = () => {
-    return configureStore({
-        reducer:{[movieApi.reducerPath] : movieApi.reducer},
-        middleware: getDefaultMiddleWare => getDefaultMiddleWare().concat(movieApi.middleware)
-    })
-}
-
-export const store = makeStore()
-
-export type TypeRootStore = ReturnType<typeof store.getState>
 
 const MainProvider:FC<{children:React.ReactNode}> = ({children}) => {
 
@@ -28,11 +18,14 @@ const queryClient = new QueryClient({
 })
     
   return (
-    <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
+    <HeadProvider>
+    <Provider store={store}>
+    <QueryClientProvider client={queryClient}>  
+        <ReduxToastr/>
         <Layout>{children}</Layout> 
-      </Provider>  
     </QueryClientProvider>
+    </Provider>
+    </HeadProvider>
   )
 }
 

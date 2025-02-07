@@ -1,7 +1,7 @@
 import { FC } from "react"
 import styles from "./Layout.module.scss"
 import Navigation from "./Navigation/Navigation"
-import Header from "./Header/Header"
+import SideBar from "./SideBar/SideBar"
 
 const Layout:FC<{children: React.ReactNode}> = ({children}) => {
     return (
@@ -10,7 +10,7 @@ const Layout:FC<{children: React.ReactNode}> = ({children}) => {
     <div className={styles.center}>
         {children}
     </div>
-    <Header/>
+    <SideBar/>
     </div>)
 }
 
