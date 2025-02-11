@@ -2,7 +2,7 @@
     @apply px-7;
 
     .wrapper{
-       
+        @apply relative;
         >a{
             @apply relative;
             >img{
