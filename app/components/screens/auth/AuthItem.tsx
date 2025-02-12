@@ -5,16 +5,12 @@ import Field from 'components/ui/field/Field'
 const fieldData = [
   {
     type:'email',
-    placeholder:'Enter your email'
+    title:'e-mail'
   },
   {
     type:'password',
-    placeholder:'Enter your password'
-  },
-  {
-    type:'text',
-    placeholder:'Enter your name'
-  },
+    title:'password'
+  }
 ]
 
 const AuthItem:FC = () => {
@@ -22,6 +18,7 @@ const AuthItem:FC = () => {
     fieldData.map((el,key)=>{
       return (
         <li className={styles.li} key={key}>
+          <p>{el.title}</p>
           <Field type={el.type} placeholder={el.placeholder} />
         </li>
       )

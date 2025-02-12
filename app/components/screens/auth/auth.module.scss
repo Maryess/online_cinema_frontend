@@ -1,6 +1,34 @@
 .auth{
-    @apply pt-48;
+    @apply pt-20 px-40 ;
+    
     .form{
-        @apply flex justify-center bg-gray-900;
+        @apply p-6 flex justify-center items-center flex-col bg-gray-950 rounded-layout ;
+        
+
+        .wrapper{
+            @apply text-white text-2xl mb-5;
+        }
+
+        .ul{
+            @apply w-full;
+
+            .li{
+                @apply mt-7;
+                >p{
+                    @apply uppercase text-gray-500 text-xs;
+                }
+            }
+        }
+
+        .footer{
+            @apply flex mt-7;
+
+            .button{
+                @apply bg-primary h-10 w-32  text-white mt-9;
+            }
+
+            
+        }
     }
+
 }

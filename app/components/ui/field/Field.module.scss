@@ -1,4 +1,5 @@
 .field{
-    @apply border border-gray-500 placeholder:text-gray-600 bg-transparent rounded-layout;
+    @apply h-8 w-full border-b-2 border-gray-600 placeholder:text-gray-600 placeholder:text-sm 
+    bg-transparent outline-none text-gray-500; 
    
 }
