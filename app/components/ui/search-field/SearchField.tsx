@@ -3,7 +3,7 @@ import styles from './SearchField.module.scss'
 import MaterialIcon from '../MaterialIcon'
 
 interface ISearchField{
-    handleSearch:(e:ChangeEvent<HTMLInputElement>)=>void,
+    handleSearch?:(e:ChangeEvent<HTMLInputElement>)=>void,
     searchTerm:string
 }
 

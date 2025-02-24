@@ -39,6 +39,10 @@
         }
         .list{
             @apply flex;
+
+            .actor_name{
+                @apply text-white text-sm text-gray-300;
+            }
         }
     }
 }

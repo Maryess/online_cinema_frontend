@@ -13,7 +13,7 @@ const WatchMovieItem:FC<{movie:IMovie, movies:IMovie[]}> = ({movie, movies}) => 
 
   return (
     <div className={styles.wrapper}>
-        <Link href={movie.slug} >
+        <Link href={`movie/${movie.slug}`} >
             <img src={movie.bigPoster} alt={movie.name} />
             <div>
             <div className={styles.info}>

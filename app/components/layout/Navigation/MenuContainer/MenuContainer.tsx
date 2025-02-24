@@ -11,7 +11,7 @@ const MenuContainer:FC = () => {
         <Genres />  
         <Login itemMenu={{
           name:'Login',
-          link:'auth',
+          link:'/auth',
           icon:'Md14Mp'
         }}/>
     </div>

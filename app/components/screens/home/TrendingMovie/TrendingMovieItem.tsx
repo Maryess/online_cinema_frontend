@@ -6,7 +6,7 @@ import styles from '../Home.module.scss'
 const TrendingMovieItem:FC<{movie:IMovie}> = ({movie}) => {
   return (
     <div className={styles.trending_movie}>   
-        <Link href={movie.slug}>
+        <Link href={`movie/${movie.slug}`}>
             <img className={styles.image} src={movie.poster} width={100} height={150} alt={movie.name}/>
         </Link>
     </div>
