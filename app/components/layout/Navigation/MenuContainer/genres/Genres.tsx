@@ -1,8 +1,4 @@
-import { useQuery } from "react-query"
-import { useGetGenres } from "./useGetGenres"
-import { DiVim } from "react-icons/di"
 import Menu from "../Menu"
-import Skeleton from "react-loading-skeleton"
 import SkeletonLoader from "components/ui/SkeletonLoader"
 import { useGenreApi } from "hooks/useGenreApi"
 

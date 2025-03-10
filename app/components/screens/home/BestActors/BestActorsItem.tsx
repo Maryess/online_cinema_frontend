@@ -2,14 +2,15 @@ import React, { FC } from 'react'
 import { IActor } from 'shared/types/movie.types'
 import styles from '../Home.module.scss'
 import Link from 'next/link'
+import GetContent from 'components/ui/get-content/GetContent'
 
 const BestActorsItem:FC<{actor:IActor}> = ({actor}) => {
   return (
     <div >
-        <Link href={actor.slug}>
-            <img  className={styles.image} src={actor.photo} width={100} height={150} alt={actor.name} />
+        <Link href={`actor/${actor.slug}`}>
+           <GetContent link={actor.photo} height={150} width={100} name={actor.name} />
             <div className={styles.info}>
-                <span>{actor.name}</span>
+                <span className={styles.actor_name}>{actor.name}</span>
             </div>
         </Link>
     </div>

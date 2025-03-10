@@ -1,10 +1,4 @@
-export interface IUser {
-    id:string;
-    name:string;
-    email:string;
-    password:string;
-    favorites:IFavorite[]
-} 
+
 
 export interface IMovie {
     id:string;

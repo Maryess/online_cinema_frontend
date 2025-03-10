@@ -1,13 +1,21 @@
 import Link from 'next/link'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { IMovie } from 'shared/types/movie.types'
 import styles from '../Home.module.scss'
+import { useSlider } from './useSlider'
+import { AiOutlineRight } from 'react-icons/ai'
+import GetContent, from 'components/ui/get-content/GetContent'
 
-const WatchMovieItem:FC<{movie:IMovie}> = ({movie}) => {
+
+const WatchMovieItem:FC<{movie:IMovie, movies:IMovie[]}> = ({movie, movies}) => {
+
+
+    const {handleNextSlide} = useSlider(movies)
+
   return (
     <div className={styles.wrapper}>
-        <Link href={movie.slug} >
-            <img src={movie.bigPoster} alt={movie.name} />
+        <Link href={`movie/${movie.slug}`} >
+            <GetContent link={movie.bigPoster} name={movie.name}/>
             <div>
             <div className={styles.info}>
                 <h1>{movie.name}</h1>
@@ -18,6 +26,7 @@ const WatchMovieItem:FC<{movie:IMovie}> = ({movie}) => {
             </div>
             </div>
         </Link>
+        <AiOutlineRight onClick={handleNextSlide} className='w-7 h-7 rounded-3xl bg-primary absolute right-3 bottom-4 cursor-pointer'/>
     </div>
   )
 }

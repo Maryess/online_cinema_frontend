@@ -2,7 +2,7 @@
     @apply px-7;
 
     .wrapper{
-       
+        @apply relative;
         >a{
             @apply relative;
             >img{
@@ -39,6 +39,10 @@
         }
         .list{
             @apply flex;
+
+            .actor_name{
+                @apply text-white text-sm text-gray-300;
+            }
         }
     }
 }
