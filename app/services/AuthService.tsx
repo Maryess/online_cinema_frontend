@@ -1,18 +1,25 @@
-import { AxiosInstance } from "api/axiosInstance";
-import { IAuth } from "components/screens/auth/auth.interface";
-import { getAuthUrl } from "config/api.config";
-import { register } from "module";
-import { useMutation } from "react-query";
-import { IUser } from "shared/types/movie.types";
+import axios from "axios";
+import { getAuthUrl, SERVER_URL } from "config/api.config";
 
 export const AuthService = {
  
+    async register (email:string,password:string) {
+       const response = await axios.post(`${SERVER_URL}${getAuthUrl('/sign-up')}`,
+			{
+				email,
+				password,
+			})
 
-    async register ({email, password}:IAuth) {
-        return AxiosInstance.post(`${getAuthUrl('/sign-up')}`,{email,password})
+        return response
     },
 
-    async auth ({email,password}:IAuth){
-        return AxiosInstance.post(`${getAuthUrl('/sign-in')}`,{email,password})
+    async auth (email:string,password:string){
+        const response = await axios.post(`${SERVER_URL}${getAuthUrl('/sign-in')}`,
+        {
+            email,
+            password,
+        })
+
+        return response
     }
 }

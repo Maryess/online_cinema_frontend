@@ -4,6 +4,7 @@ import { IMovie } from 'shared/types/movie.types'
 import styles from '../Home.module.scss'
 import { useSlider } from './useSlider'
 import { AiOutlineRight } from 'react-icons/ai'
+import GetContent, from 'components/ui/get-content/GetContent'
 
 
 const WatchMovieItem:FC<{movie:IMovie, movies:IMovie[]}> = ({movie, movies}) => {
@@ -14,7 +15,7 @@ const WatchMovieItem:FC<{movie:IMovie, movies:IMovie[]}> = ({movie, movies}) => 
   return (
     <div className={styles.wrapper}>
         <Link href={`movie/${movie.slug}`} >
-            <img src={movie.bigPoster} alt={movie.name} />
+            <GetContent link={movie.bigPoster} name={movie.name}/>
             <div>
             <div className={styles.info}>
                 <h1>{movie.name}</h1>

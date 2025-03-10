@@ -1,42 +1,61 @@
-import React, { useState } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
-import { IAuth } from './auth.interface'
-import styles from './auth.module.scss'
-import AuthItem from './AuthItem'
-import AuthItemList from './AuthItemList'
-import AuthButton from './button/AuthButton'
-import { useAuth } from 'hooks/useAuht'
+import React, { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { IAuth } from './auth.interface';
+import styles from './auth.module.scss';
+import AuthItemList from './AuthFields'; // Импортируем AuthItemList
+import AuthButton from './button/AuthButton';
+import { useActions } from 'hooks/useAction';
+import { useAuthRedirect } from './useAuthRedirect';
+import Heading from 'components/ui/heading/Heading';
+import Button from 'components/ui/button/Button';
+import AuthFields from './AuthFields';
+import { useAuth } from 'hooks/useAuht';
+import Meta from 'utils/meta/Meta';
 
 const AuthContainer = () => {
-  const [reg,setReg] = useState<string>('auth')
-  const {formState, handleSubmit} = useForm<IAuth>()
-  const {auth,register} = useAuth()
-  const onSubmit:SubmitHandler<IAuth> = (data) => console.log(data)
-  const [stateAuth,setStateAuth] = useState<string>('auth')
+    useAuthRedirect()
+	const [type, setType] = useState<'login' | 'register'>('login')
 
+	const {
+		register: registerInput,
+		handleSubmit,
+		formState,
+		reset,
+	} = useForm<IAuth>({
+		mode: 'onChange',
+	})
 
-  const handleClickAuth = (type:string) => {
-    if(stateAuth === 'auth' && type === 'auth'){
-      setStateAuth('auth')
-      auth.mutate()
-    }
-     if(stateAuth === 'reg' && type === 'reg'){
-      setStateAuth('reg')
-      register.mutate()
-    }
-  }
+	const { login, register } = useActions()
 
+	const onSubmit: SubmitHandler<IAuth> = (data) => {
+		if (type === 'login') login(data)
+		else if (type === 'register') register(data)
 
-  return ( 
-    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <div className={styles.wrapper}>{stateAuth === 'auth'? <span>Auth</span> : <span>Register</span>}</div> 
-      <AuthItemList/>
-      <div className={styles.footer}>
-        <AuthButton title='Login' classname= {stateAuth === 'auth'? 'bg-primary rounded-l-xl': 'rounded-l-xl'} onclick={()=>handleClickAuth('auth')}/>
-        <AuthButton title='Register' classname={stateAuth === 'reg'? 'bg-primary rounded-r-xl ': 'rounded-r-xl' }onclick={()=> handleClickAuth('reg')} />
-      </div> 
-    </form>
-  )
-}
+		reset()
+	}
 
-export default AuthContainer
+    return (
+        <Meta title='Auth'>
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+            <Heading title={type}/>
+            <AuthFields register={registerInput} formState={formState} />
+            <div className={styles.buttons}>
+						<Button
+							type="submit"
+							onClick={() => setType('login')}		
+						>
+							Login
+						</Button>
+						<Button
+							type="submit"
+							onClick={() => setType('register')}
+						>
+							Register
+						</Button>
+					</div>
+        </form>
+        </Meta>
+    );
+};
+
+export default AuthContainer;

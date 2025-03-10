@@ -1,29 +1,34 @@
-import { useMutation, useQuery } from "react-query"
-import { GenreService } from "services/GenreService"
-import { getGenreUrl } from "config/api.config"
-import { IMenuItem } from "components/layout/Navigation/MenuContainer/menu.interface"
-import { AuthService } from "services/AuthService"
-import { IUser } from "shared/types/movie.types"
-import { AxiosInstance } from "api/axiosInstance"
-import { useGetFiledValue } from "./useGetFIiedValue"
-
+import { useMutation } from "react-query";
+import { AuthService } from "services/AuthService";
+import { IAuth } from "components/screens/auth/auth.interface"; // Import IAuth
 
 export const useAuth = () => {
-
-    const {email,password} = useGetFiledValue()
-
-    const register =  useMutation(()=>AuthService.register({email:email,password:password}),{
-            onSuccess:(data, variables, context)=> {
-                console.log(data)
+    const registerMutation = useMutation(
+        (userData: IAuth) => AuthService.register(userData), // Принимаем данные
+        {
+            onSuccess: (data, variables, context) => {
+                console.log("Register success:", data, variables); // Логируем данные
             },
-        })
-    
+            onError: (error) => {
+                console.error("Register error:", error); // Обрабатываем ошибки
+            },
+        }
+    );
 
-    const auth =  useMutation(()=>AuthService.auth({email:email,password:password}),{
-            onSuccess:(data, variables, context)=> {
-                console.log(data)
-            },}
-        )
+    const authMutation = useMutation(
+        (userData: IAuth) => AuthService.auth(userData), // Принимаем данные
+        {
+            onSuccess: (data, variables, context) => {
+                console.log("Auth success:", data, variables); // Логируем данные
+            },
+             onError: (error) => {
+                console.error("Auth error:", error); // Обрабатываем ошибки
+            },
+        }
+    );
 
-    return {register,auth}
-}
+    return {
+        register: registerMutation,
+        auth: authMutation,
+    };
+};
