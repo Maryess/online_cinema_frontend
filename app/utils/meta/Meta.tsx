@@ -6,9 +6,8 @@ import { siteName, titleMerge } from 'config/seo.config'
 import { onlyText } from 'utils/string /clearText'
 
 const Meta:FC<IMeta> = ({title,description,image,children}) => {
-
-    const {asPath} = useRouter()
-    const currentUrl = `${process.env.APP_URL}/${asPath}`
+  const {asPath} = useRouter()
+  const currentUrl = `${process.env.APP_URL}/${asPath}`
 
   return (
     <div>

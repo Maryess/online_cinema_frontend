@@ -5,27 +5,28 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toastr } from "react-redux-toastr";
 
 
-export const register = createAsyncThunk('auth/register',
+export const register = createAsyncThunk('auth/sign-up',
         async ({email,password}) => {
             try {
                 const response = await AuthService.register(email, password)
-                toastr.success('Registration', 'Completed successfully')
+                response.data.message ? toastr.error('Registration', `${response.data.message.message}`) : toastr.success('Registration', 'Completed successfully')
                 return response.data
             } catch (error) {
-               console.log(error)
+               toastr.error('Registration',`${error}`)
             }
         }
     );
 
     export const login = createAsyncThunk(
-        'auth/login',
+        'auth/sign-in',
         async ({email,password }) => {
             try {
                 const response = await AuthService.auth(email, password)
-                toastr.success('Login', 'Completed successfully')
+                response.data.message ? toastr.error('Login', `${response.data.message.message}`) :   toastr.success('Login', 'Completed successfully')
+                console.log(response.data)
                 return response.data
             } catch (error) {
-               console.log(error)
+                toastr.error('Login', `${error}`)
             }
         }
     )
