@@ -35,7 +35,7 @@ const Auth:FC = () => {
         <Meta title='Auth'>
         <div className={styles.auth}>    
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-            <Heading title={type}/>
+            <Heading title='Auth'/>
             <AuthFields register={registerInput} formState={formState} />
             <div className={styles.buttons}>
 						<Button

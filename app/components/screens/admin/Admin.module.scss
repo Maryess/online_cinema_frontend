@@ -1,0 +1,18 @@
+.layout{
+
+    .header{
+        @apply bg-gray-950 w-full h-14 rounded-image;
+       
+        .ul{
+            @apply flex items-center justify-center h-full;
+
+            .li{
+                @apply mx-10 text-gray-500;
+            }
+        }
+    }
+
+    .admin{
+
+    }
+}

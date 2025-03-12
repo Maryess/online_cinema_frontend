@@ -1,8 +1,7 @@
-import { useMutation } from "react-query";
 import { AuthService } from "services/AuthService";
-import { IAuth } from "components/screens/auth/auth.interface"; // Import IAuth
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toastr } from "react-redux-toastr";
+import { UserService } from "services/UserService";
 
 
 export const register = createAsyncThunk('auth/sign-up',
@@ -30,3 +29,5 @@ export const register = createAsyncThunk('auth/sign-up',
             }
         }
     )
+
+    
