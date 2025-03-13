@@ -8,7 +8,7 @@ const initialState: IUserInitialState = {
 	isLoading: false,
 }
 
-export const userReducer = createSlice({
+const userReducer = createSlice({
     name:'user',
     initialState,
     reducers:{},

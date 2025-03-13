@@ -1,7 +1,7 @@
 import  { ChangeEvent, FC, useState } from 'react'
 import AuthItem from './AuthItem'
 import styles from './auth.module.scss'
-import Field from 'components/ui/field/Field'
+import Field from 'components/ui/auth/field/Field'
 import { useGetFiledValue } from 'hooks/useGetFIiedValue'
 import { FormState, useForm, UseFormRegister } from 'react-hook-form'
 import { IAuth } from './auth.interface'

@@ -16,8 +16,8 @@ export const register = createAsyncThunk('auth/sign-up',
         }
     );
 
-    export const login = createAsyncThunk(
-        'auth/sign-in',
+export const login = createAsyncThunk(
+    'auth/sign-in',
         async ({email,password }) => {
             try {
                 const response = await AuthService.auth(email, password)

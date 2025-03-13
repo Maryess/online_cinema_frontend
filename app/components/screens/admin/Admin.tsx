@@ -1,12 +1,11 @@
 import { FC } from 'react'
 import AdminLayout from './layout/AdminLayout'
+import AdminContainer from './AdminContainer'
 
 const Admin:FC = () => {
   return (
     <AdminLayout>
-        <div>
-            admin
-        </div>
+        <AdminContainer />
     </AdminLayout>
   )
 }
