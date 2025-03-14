@@ -1,7 +1,9 @@
 .container{
     @apply mt-5;
 
-
+    >div {
+        @apply mb-8;
+    }
     .button{
         @apply text-white text-sm bg-primary rounded-image outline-none w-full h-8 mt-4;
     }
