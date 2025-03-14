@@ -6,12 +6,10 @@ import Heading from 'components/ui/heading/Heading'
 
 const TrendingContainer:FC = () => {
 
-  const {data} = useMovieApi()
-
   return (
     <div className={styles.center}> 
       <Heading title='Trending now' className='mb-3 my-8'/>
-      <TrendingMovieList movies={data || []}/>
+      <TrendingMovieList movies={  []}/>
     </div>
   )
 }

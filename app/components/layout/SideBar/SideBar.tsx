@@ -7,7 +7,7 @@ const SideBar:FC = () => {
 
     return <div className={styles.sidebar}>
       <Search/>
-      <MoviesContainer/>
+      {/* <MoviesContainer/> */}
     </div>
 }
 

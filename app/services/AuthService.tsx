@@ -22,4 +22,5 @@ export const AuthService = {
 
         return response
     }
+
 }

@@ -1,0 +1,24 @@
+.slider{
+    @apply relative mx-auto;
+
+    .slide{
+        @apply relative;
+
+        >img{
+            @apply rounded-3xl; 
+         }
+
+         .content{
+            @apply relative z-2 p-2;
+            .heading{
+                @apply text-white uppercase text-2xl truncate font-bold;
+            }
+            .subHeading{
+                @apply text-xs text-gray-600;
+            }
+            .button{
+                @apply bg-primary w-16 h-8 rounded-image text-xs mt-3;
+            }
+         }
+    }
+}

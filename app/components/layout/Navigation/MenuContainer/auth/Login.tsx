@@ -7,29 +7,38 @@ import { IMenuItem } from '../menu.interface'
 import Link from 'next/link'
 import MaterialIcon from 'components/ui/MaterialIcon'
 import cn from 'classnames'
+import { useActions } from 'hooks/useAction'
+import { useAuthRedirect } from 'components/screens/auth/useAuthRedirect'
+import { useAuth } from 'hooks/useAuht'
 
-const Login:FC<{itemMenu:IMenuItem}> = ({itemMenu}) => {
+const Login:FC = () => {
 
   const {asPath} = useRouter()
-
+  const {user} = useAuth()
   return (
-    <div className={styles.menu}>
-      <ul className={styles.ul}>
-       <Heading className="text-gray-500 mb-6" title='General'/>
        <li className={cn({
-            [styles.active]: asPath === itemMenu.link
+            [styles.active]: asPath === '/auth'
             })}>
-            <Link href={itemMenu.link}>
+            {!user ? 
+              <Link href={'/auth'}>
                 <div className={styles.link_content}>
                 <MaterialIcon 
-                    name={itemMenu.icon}
+                    name='Md14Mp'
                 />
-                <span>{itemMenu.name}</span>
+                <span>Login</span>
                 </div>
             </Link>
+            :
+            <Link href={'/auth'}>
+              <div className={styles.link_content}>
+              <MaterialIcon 
+                  name='Md14Mp'
+              />
+              <span>Logout</span>
+              </div>
+            </Link>
+            }
         </li>
-      </ul>
-    </div>
   )
 }
 

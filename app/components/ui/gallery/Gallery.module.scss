@@ -1,0 +1,16 @@
+.gallery{
+    @apply flex;
+        >a{
+            >img{
+                @apply rounded-image mr-5;
+            }
+
+        .content{
+                @apply
+                .title{
+                    @apply text-white text-sm text-gray-300;
+                }
+        }
+
+        }
+}

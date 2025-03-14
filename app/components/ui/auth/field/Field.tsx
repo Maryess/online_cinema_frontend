@@ -1,11 +1,8 @@
 import { ChangeEvent, FC, InputHTMLAttributes } from 'react';
-import MaterialIcon from '../MaterialIcon';
+import MaterialIcon from '../../MaterialIcon';
 import styles from './Field.module.scss'
 import { forwardRef } from 'react'
-
-
-type TypeInputPropsField = InputHTMLAttributes<HTMLInputElement>;
-interface IField extends TypeInputPropsField{}
+import { IField } from 'shared/types/ui.types';
 
 const Field = forwardRef<HTMLInputElement, IField>(
 	({ placeholder, type = 'text', style, ...rest }, ref) => {

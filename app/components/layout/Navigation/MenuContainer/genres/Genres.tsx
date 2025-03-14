@@ -1,9 +1,10 @@
 import Menu from "../Menu"
 import SkeletonLoader from "components/ui/SkeletonLoader"
 import { useGenreApi } from "hooks/useGenreApi"
+import { usePopularGenres } from "./usePopularGenres"
 
 const Genres = () => {
-    const {isLoading, data} = useGenreApi()
+    const {isLoading, data} = usePopularGenres()
 
 
   return isLoading? <div className="mx-6 mb-6"> <SkeletonLoader count={5} className="h-7 mt-6"/></div> :

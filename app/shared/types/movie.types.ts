@@ -1,5 +1,3 @@
-
-
 export interface IMovie {
     id:string;
     poster:string;
@@ -23,8 +21,6 @@ export interface IGenre {
     slug:string;
 
 }
-
-
 
 export interface IActor {
     id:string;

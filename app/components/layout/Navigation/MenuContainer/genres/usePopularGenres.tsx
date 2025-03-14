@@ -4,7 +4,7 @@ import { getGenreUrl } from "config/api.config"
 import { IMenuItem } from "components/layout/Navigation/MenuContainer/menu.interface"
 
 
-export const useGenreApi = () => {
+export const usePopularGenres = () => {
 
     const queryData = useQuery('genres menu', ()=>
         GenreService.getAll(),{
