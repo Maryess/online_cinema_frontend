@@ -32,6 +32,7 @@ export const AuthService = {
 
         return response
     },
+
     logout(){
         removeTokensStorage()
         localStorage.removeItem('user')
@@ -39,8 +40,10 @@ export const AuthService = {
 
     async getNewTokens(){
         const refreshToken = Cookies.get('refreshToken')
-        const response = await axiosDefault.post<IAuthResponse>(getAuthUrl('sign-in/access-token'),
-        {refreshToken}, {headers: getContentType()}
+        const response = await axiosDefault.post<IAuthResponse>(getAuthUrl('/sign-in/access-token'),{refreshToken}, 
+        {
+            headers: getContentType()
+        }
     )
 
     if (response.data.accessToken) saveToStorage(response.data)
