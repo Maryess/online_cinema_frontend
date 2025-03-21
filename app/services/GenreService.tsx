@@ -1,9 +1,9 @@
-import { AxiosInstance } from "api/axiosInstance";
+import { axiosDefault } from "api/interceprots";
 import { getGenreUrl } from "config/api.config";
 import { IGenre } from "shared/types/movie.types";
 
 export const GenreService = {
     async getAll(){
-        return AxiosInstance.get<IGenre[]>(getGenreUrl(''))
+        return axiosDefault.get<IGenre[]>(getGenreUrl(''))
     } 
 }

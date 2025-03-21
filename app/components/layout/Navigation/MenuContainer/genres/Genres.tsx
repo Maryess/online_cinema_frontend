@@ -1,6 +1,5 @@
 import Menu from "../Menu"
 import SkeletonLoader from "components/ui/SkeletonLoader"
-import { useGenreApi } from "hooks/useGenreApi"
 import { usePopularGenres } from "./usePopularGenres"
 
 const Genres = () => {

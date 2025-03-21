@@ -7,10 +7,7 @@ import { UserService } from "services/UserService"
 export const useMovieApi=() => {
  const queryData = useQuery('best actors', ()=>
                  MovieService.getAll(),{
-                     select: ({data}) => data.map((movie => ({
-                                     link:getMovieUrl(movie.slug),
-                                     subTitle:'fdfd'
-                                 } as ISlide) ))
+                     select: ({data}) => data
             })
     
         return queryData
