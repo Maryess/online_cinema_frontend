@@ -5,9 +5,11 @@ import ReduxToastr from "./ReduxToastr"
 import { Provider } from "react-redux"
 import { store } from "store/store"
 import HeadProvider from "./HeadProvider"
+import AuthProvider from "./AuthProvider/AuthProvider"
+import { TypeComponentAuthFields } from "shared/types/auth.types"
 
 
-const MainProvider:FC<{children:React.ReactNode}> = ({children}) => {
+const MainProvider:FC<TypeComponentAuthFields> = ({children, Component}) => {
 
 const queryClient = new QueryClient({
     defaultOptions:{
@@ -22,7 +24,9 @@ const queryClient = new QueryClient({
     <Provider store={store}>
     <QueryClientProvider client={queryClient}>  
         <ReduxToastr/>
+        <AuthProvider Component={Component}>
         <Layout>{children}</Layout> 
+        </AuthProvider>
     </QueryClientProvider>
     </Provider>
     </HeadProvider>
