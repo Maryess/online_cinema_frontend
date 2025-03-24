@@ -15,8 +15,6 @@ import AuthItem from './AuthItem'
 
 const Login:FC = () => {
 
-  const {asPath} = useRouter()
-  const {user} = useAuth()
   return (
     <div className={styles.menu}>
     <ul className={styles.ul}>

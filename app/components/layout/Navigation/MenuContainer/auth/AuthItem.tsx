@@ -25,7 +25,7 @@ const {user} = useAuth()
           {user?.isAdmin &&
              <MenuItem itemMenu={{
               icon:"MdOutlineLock",
-              link:'/admin-panel',
+              link:'/admin',
               name:'Admin panel'
             }}/>
           }

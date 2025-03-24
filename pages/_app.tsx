@@ -1,6 +1,5 @@
 import { AppProps } from "next/app";
 import  '../styles/global.scss'
-import { QueryClient, QueryClientProvider } from "react-query";
 import MainProvider from "providers/MainProvider";
 import { TypeComponentAuthFields } from "shared/types/auth.types";
 

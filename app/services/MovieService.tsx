@@ -14,6 +14,10 @@ export const MovieService = {
        })
     },
 
+    async deleteMovieById(id:string){
+        return axiosDefault.delete<string>(getMovieUrl(`/${id}`))
+    },
+
     async getAll(){
         return axiosDefault.get<IMovie[]>(getMovieUrl(''))
     },

@@ -11,11 +11,11 @@ export const navItems:IAdminNavItem[] =
 },
 {
     title: 'Movies',
-    link:''
+    link:'/manage/movies'
 },
 {
     title: 'Actors',
-    link:''
+    link:'/manage/actors'
 },
 {
     title: 'Genres',
