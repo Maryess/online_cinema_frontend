@@ -5,5 +5,8 @@ import { IGenre } from "shared/types/movie.types";
 export const GenreService = {
     async getAll(){
         return axiosDefault.get<IGenre[]>(getGenreUrl(''))
+    },
+    async deleteGenreById(genreId:string){
+        return axiosDefault.delete<string>(getGenreUrl(`${genreId}`))
     } 
 }

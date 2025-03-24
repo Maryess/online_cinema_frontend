@@ -3,11 +3,11 @@ import { IAdminNavItem } from "./admin-navigation.interface";
 export const navItems:IAdminNavItem[] = 
 [{
     title: 'Statistics',
-    link:''
+    link:'/manage/statistics'
 },
 {
     title: 'Users',
-    link:''
+    link:'/manage/users'
 },
 {
     title: 'Movies',
@@ -19,5 +19,5 @@ export const navItems:IAdminNavItem[] =
 },
 {
     title: 'Genres',
-    link:''
+    link:'/manage/genres'
 }]

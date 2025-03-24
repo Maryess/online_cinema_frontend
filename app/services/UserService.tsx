@@ -9,5 +9,11 @@ export const UserService = {
     } ,
     async getFavoritesMovies (id:string) {
         return axiosDefault.get<IMovie[]>(getUserUrl(`/favorites/${id}`))
+    },
+    async getAll (){
+        return axiosDefault.get<IUser[]>(getUserUrl(''))
+    },
+    async deleteUserById(userId:string){
+        return  axiosDefault.delete<string>(getUserUrl(`/${userId}`))
     }
 }
