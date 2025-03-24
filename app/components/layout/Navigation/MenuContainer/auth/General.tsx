@@ -18,6 +18,7 @@ const Login:FC = () => {
   return (
     <div className={styles.menu}>
     <ul className={styles.ul}>
+      <Heading title='General' className='text-gray-500 mb-6'/>
       <AuthItem/>
     </ul>
     </div>

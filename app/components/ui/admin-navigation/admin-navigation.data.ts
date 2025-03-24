@@ -3,7 +3,7 @@ import { IAdminNavItem } from "./admin-navigation.interface";
 export const navItems:IAdminNavItem[] = 
 [{
     title: 'Statistics',
-    link:'/manage/statistics'
+    link:'/manage'
 },
 {
     title: 'Users',

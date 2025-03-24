@@ -2,34 +2,37 @@ import { FC } from 'react'
 import MenuItem from '../MenuItem'
 import { useAuth } from 'hooks/useAuht'
 import LogoutButton from './LogoutButton'
+import styles from '../Menu.module.scss'
 
 const AuthItem:FC = () => {
 const {user} = useAuth()
   return (
-    <div>
-            {!user ? <>
+    <>
+        {!user &&
                 <MenuItem itemMenu={{
-                  icon:"MdSettings",
+                  icon:'MdLogin',
                   link:'/auth',
                   name:'Login'
                 }}/>
-            </>
-            :
+        }
+        {user && <>
+            <MenuItem itemMenu={{
+              icon:'MdSettings',
+              link:'/profile',
+              name:'Profile'
+            }}/>
             <LogoutButton/>
-            // <MenuItem itemMenu={{
-            //   icon:"MdLogin",
-            //   link:'/auth',
-            //   name:'Login'
-            // }}/>
-            }
+            </>}
+           
+          
           {user?.isAdmin &&
              <MenuItem itemMenu={{
               icon:"MdOutlineLock",
-              link:'/admin',
+              link:'/manage',
               name:'Admin panel'
             }}/>
           }
-    </div>
+    </>
   )
 }
 

@@ -8,7 +8,7 @@ const Admin:FC = () => {
   return (
     <div className={styles.admin}>
       <AdminNavigation/>
-      <Heading title='Statistics'/>
+      <Heading title='Some statistics' className='text-3xl mb-4'/>
       <Statistics/>
     </div>
   )

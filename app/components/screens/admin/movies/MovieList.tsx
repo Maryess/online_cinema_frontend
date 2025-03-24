@@ -6,6 +6,7 @@ import Meta from 'utils/meta/Meta'
 import { useMovie } from './useMovie'
 import styles from '../Admin.module.scss'
 import AdminTable from 'components/ui/admin-table/AdminTable'
+import AdminTableHeader from 'components/ui/admin-table/AdminTableHeader'
 
 const MovieList:FC = () => {
 
@@ -15,7 +16,7 @@ const MovieList:FC = () => {
    <Meta title='Create movie'>
         <AdminNavigation/>
         <Heading title='Movie' className='text-3xl mb-4'/>
-        <Search />
+        <AdminTableHeader/>
         <AdminTable tableItems={data || []} isLoading={isLoading} removeHandler={deleteAsync} />
    </Meta>
   )

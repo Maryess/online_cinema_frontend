@@ -15,7 +15,7 @@ $width-content:300px;
     @apply text-xs font-medium;
   }
 
-  >li{
+  .li{
     @apply hover:text-gray-500;
 
     .link_content{

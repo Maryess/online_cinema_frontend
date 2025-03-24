@@ -6,6 +6,7 @@ import Meta from 'utils/meta/Meta'
 import styles from '../Admin.module.scss'
 import AdminTable from 'components/ui/admin-table/AdminTable'
 import { useUser } from './useUser'
+import AdminTableHeader from 'components/ui/admin-table/AdminTableHeader'
 
 const UserList:FC = () => {
 
@@ -15,7 +16,7 @@ const UserList:FC = () => {
    <Meta title='Create user'>
         <AdminNavigation/>
         <Heading title='Users' className='text-3xl mb-4'/>
-        <Search />
+        <AdminTableHeader />
         <AdminTable tableItems={data || []} isLoading={isLoading} removeHandler={deleteAsync} />
    </Meta>
   )

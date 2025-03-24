@@ -1,16 +1,3 @@
-.layout{
-
-    .header{
-        @apply bg-gray-950 w-full h-14 rounded-image;
-       
-        .ul{
-            @apply flex items-center justify-center h-full;
-
-            .li{
-                @apply mx-10 text-gray-500;
-            }
-        }
-    }
 
     .admin{
         .fields{
@@ -28,5 +15,19 @@
                 }
             }
         }
+
+
+        .statistics{
+            @apply bg-gray-950 w-80 h-60 rounded-image;
+
+            .users{
+                @apply text-white h-full flex justify-center items-center flex-col;
+                >div{
+                    @apply text-6xl;
+                }
+                >p{
+                    @apply text-sm text-gray-500 mt-2;
+                }
+            }
+        }
     }
-}

@@ -5,7 +5,7 @@ export const menuItem:IMenu = {
     item:[{
         icon:"MdHome",
         name:'Home',
-        link:'/home'
+        link:'/'
     },
     {
         icon:"MdExplore",

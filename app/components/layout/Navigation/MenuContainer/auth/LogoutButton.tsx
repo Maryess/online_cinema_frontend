@@ -1,9 +1,11 @@
 import MaterialIcon from 'components/ui/MaterialIcon'
 import { useActions } from 'hooks/useAction'
 import { FC, MouseEvent } from 'react'
+import cn from 'classnames'
+import styles from '../Menu.module.scss'
+import MenuItem from '../MenuItem'
 
 const LogoutButton:FC = () => {
-
     const {logout} = useActions()
 
     const handleLogout = (event:MouseEvent<HTMLAnchorElement>) =>{
@@ -12,12 +14,13 @@ const LogoutButton:FC = () => {
     }
 
   return (
-    <li>
-        <a onClick={handleLogout} >
-            <MaterialIcon name='MdLogout'/>
-            <span>Logout</span>
-        </a>
-    </li>
+
+    <MenuItem itemMenu={{
+      icon:"MdLogout",
+      link:'/auth',
+      name:'Logout',
+      onClick:handleLogout
+    }}/>
   )
 }
 
