@@ -1,0 +1,12 @@
+.actions{
+    @apply flex text-primary items-center;
+
+    >button{
+        @apply bg-gray-950 w-7 h-7 rounded-3xl mx-1;
+
+        >svg{
+            @apply m-auto;
+        }
+    }
+
+}

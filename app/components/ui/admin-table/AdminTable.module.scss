@@ -1,0 +1,19 @@
+.table{
+    @apply  w-full text-white mt-9 text-xs;
+
+    .item{
+        @apply flex  bg-gray-800 items-center rounded-lg h-14 mt-4;
+    
+        >div{
+            @apply w-full mx-4;
+        }
+       
+       >div:last-child{
+        @apply flex justify-end
+       }
+    } 
+}
+
+.header{
+    @apply flex justify-between h-full;
+}

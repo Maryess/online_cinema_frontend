@@ -2,9 +2,10 @@ import styles from './Movie.module.scss'
 import { FC } from "react"
 import { IMovie } from 'shared/types/movie.types'
 import Link from 'next/link'
+import { ISideBarMovie } from './movie-list.interface'
 
 
-const MovieItem:FC<{movie:IMovie}>= ({movie}) => {
+const MovieItem:FC<{movie:ISideBarMovie}>= ({movie}) => {
 
 
   return (
@@ -15,7 +16,9 @@ const MovieItem:FC<{movie:IMovie}>= ({movie}) => {
        <div className={styles.info} >
             <span>{movie.name}</span>
             <div className={styles.genre}>
-                Comedy
+                {movie.genres.map((el)=>(
+                  el.name
+                ))}
             </div>
        </div>
     </div>

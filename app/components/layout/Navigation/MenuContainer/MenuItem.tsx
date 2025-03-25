@@ -13,8 +13,8 @@ const MenuItem:FC<{itemMenu:IMenuItem}>=({itemMenu}) => {
   return (
         <li className={cn({
             [styles.active]: asPath === itemMenu.link
-            })}>
-            <Link href={itemMenu.link}>
+            }, styles.li)}>
+            <Link href={itemMenu.link} onClick={itemMenu.onClick}>
                 <div className={styles.link_content}>
                 <MaterialIcon 
                     name={itemMenu.icon}

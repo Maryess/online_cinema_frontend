@@ -20,14 +20,15 @@
             }
         }
 
-        .footer{
-            @apply flex mt-7;
-
-            .button{
-                @apply h-10 w-32 text-white mt-9 bg-primary;
+       
+            .buttons{
+                @apply mt-9;
+                >button{
+                    @apply mx-4
+                }
             }
 
-        }
+        
     }
 
 }

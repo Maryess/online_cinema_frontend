@@ -1,10 +1,10 @@
-import { AxiosInstance } from "api/axiosInstance"
+import { axiosDefault } from "api/interceprots"
 import { getMovieUrl } from "config/api.config"
 import { IMovie } from "shared/types/movie.types"
 
 export const MovieService = {
     async getAllSearch (searchTerm?:string){
-       return AxiosInstance.get<IMovie[]>(getMovieUrl(''),{
+       return axiosDefault.get<IMovie[]>(getMovieUrl(''),{
         params:searchTerm?{
             searchTerm
         }:
@@ -14,12 +14,16 @@ export const MovieService = {
        })
     },
 
+    async deleteMovieById(id:string){
+        return axiosDefault.delete<string>(getMovieUrl(`/${id}`))
+    },
+
     async getAll(){
-        return AxiosInstance.get<IMovie[]>(getMovieUrl(''))
+        return axiosDefault.get<IMovie[]>(getMovieUrl(''))
     },
 
     async createMovie(name:string,duration:number,poster:string,bigPoster:string,videoUrl:string,country:string,year:number){
-        const response = await AxiosInstance.post('/movie',{
+        const response = await axiosDefault.post('/movie',{
             name,
             duration,
             country,

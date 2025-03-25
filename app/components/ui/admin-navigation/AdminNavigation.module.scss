@@ -1,0 +1,11 @@
+.nav{
+    @apply bg-gray-950 w-4/5 mx-auto mb-10 rounded-image text-gray-500;
+
+    >ul{
+        @apply flex items-center justify-evenly;
+
+        .li{
+            @apply inline-block px-5 py-4;
+        }
+    }
+}
