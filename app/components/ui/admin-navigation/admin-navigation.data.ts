@@ -1,23 +1,24 @@
+import { getAdminUrl } from "config/api.config";
 import { IAdminNavItem } from "./admin-navigation.interface";
 
 export const navItems:IAdminNavItem[] = 
 [{
     title: 'Statistics',
-    link:'/manage'
+    link: getAdminUrl(`/`)
 },
 {
     title: 'Users',
-    link:'/manage/users'
+    link:getAdminUrl(`/users`)
 },
 {
     title: 'Movies',
-    link:'/manage/movies'
+    link:getAdminUrl(`/movies`)
 },
 {
     title: 'Actors',
-    link:'/manage/actors'
+    link:getAdminUrl(`/actors`)
 },
 {
     title: 'Genres',
-    link:'/manage/genres'
+    link:getAdminUrl(`/genres`)
 }]

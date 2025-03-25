@@ -1,5 +1,5 @@
 import { IAdminTableItem, ITableItem } from "components/ui/admin-table/admin-table.interface"
-import { getActorUrl, getMovieUrl } from "config/api.config"
+import { getActorUrl, getAdminUrl, getMovieUrl } from "config/api.config"
 import { useDebounce } from "hooks/useDebounce"
 import { useMemo, useState } from "react"
 import { useMutation, useQuery } from "react-query"
@@ -17,8 +17,8 @@ export const useActor=() => {
                      select: ({data}) => data.map((actor):IAdminTableItem => 
                         ({
                             id:actor.id,
-                            editUrl:getActorUrl(`/edit/${actor.id}`),
-                            items: [actor.name, actor.country, actor.slug]
+                            editUrl:getAdminUrl(`/actor/edit/${actor.id}`),
+                            items: [actor.name, actor.country, String(actor.year)]
                 }))
     })
     const {mutateAsync:deleteAsync} = useMutation('delete actor',(actorId:string)=>(ActorService.deleteActorById(actorId)
