@@ -18,9 +18,15 @@ export const MovieService = {
         return axiosDefault.delete<string>(getMovieUrl(`/${id}`))
     },
 
-    async getAll(){
-        return axiosDefault.get<IMovie[]>(getMovieUrl(''))
-    },
+    async getAll(searchTerm?: string) {
+		return axiosDefault.get<IMovie[]>(getMovieUrl(``), {
+			params: searchTerm
+				? {
+						searchTerm,
+				  }
+				: {},
+		})
+	},
 
     async createMovie(name:string,duration:number,poster:string,bigPoster:string,videoUrl:string,country:string,year:number){
         const response = await axiosDefault.post('/movie',{

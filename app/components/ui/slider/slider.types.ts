@@ -3,5 +3,5 @@ export interface ISlide {
 	bigPoster: string
 	name: string
 	subTitle?: string
-	link?: string
+	link: string
 }

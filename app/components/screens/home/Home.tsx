@@ -8,22 +8,13 @@ import { MovieService } from "services/MovieService"
 import { useQuery } from "react-query"
 
 
- const Home:FC<IHome> = ({slide}) => {
+ const Home:FC<IHome> = ({slides}) => {
 
-    const {data, isLoading} = useQuery(['movie slider'], () => 
-       MovieService.getAll(),{
-        select:({data})=> data.map((movie)=>({
-         name:movie.name,
-         bigPoster:movie.bigPoster,
-         id:movie.id
-        }))
-       }
-     )
 
    return (
       <Meta title="Watch movie online" description="Watch movies and TV shows free in your browser">
          <Heading title="Watch movie online"/>
-         {/* {slide.length && <Slider slides={data || []} />} */}
+         {slides.length && <Slider slides={slides} />}
       </Meta>
    ) 
  }

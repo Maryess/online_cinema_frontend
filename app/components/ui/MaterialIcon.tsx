@@ -1,14 +1,19 @@
-import { FC } from "react"
-import { TypeMaterialIcon } from "shared/types/icon.types"
-import * as MaterialIcons from "react-icons/md"
+import dynamic from "next/dynamic";
+import { TypeMaterialIcon } from "shared/types/icon.types";
 
+const MaterialIcon: React.FC<{ name: TypeMaterialIcon; className?: string }> = ({
+  name,
+  className,
+}) => {
+  const IconComponent = dynamic(
+    () => import("react-icons/md").then((mod) => mod[name]),
+    {
+      ssr: false,
+      loading: () => <span className={className} />, // Заглушка при загрузке
+    }
+  );
 
-const MaterialIcon:FC<{name:TypeMaterialIcon, classname?:string}> = ({name, classname}) => {
+  return <IconComponent className={className} />;
+};
 
-    const IconComponent = MaterialIcons[name]
-
-  return <IconComponent className={classname}/> 
-  
-}
-
-export default MaterialIcon
+export default MaterialIcon;

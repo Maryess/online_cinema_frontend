@@ -17,7 +17,7 @@ export const useUser=() => {
                         ({
                             id:user.id,
                             editUrl:getMovieUrl(`/edit/${user.id}`),
-                            items: [user.email, user.password]
+                            items: [user.email, String(user.isAdmin)]
                 }))
     })
     const {mutateAsync:deleteAsync} = useMutation('delete user',(userId:string)=>(UserService.deleteUserById(userId)

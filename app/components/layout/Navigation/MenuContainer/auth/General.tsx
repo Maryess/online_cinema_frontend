@@ -13,7 +13,7 @@ import { useAuth } from 'hooks/useAuht'
 import MenuItem from '../MenuItem'
 import AuthItem from './AuthItem'
 
-const Login:FC = () => {
+const General:FC = () => {
 
   return (
     <div className={styles.menu}>
@@ -25,4 +25,4 @@ const Login:FC = () => {
   )
 }
 
-export default Login
+export default General

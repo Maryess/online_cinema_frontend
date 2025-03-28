@@ -20,14 +20,14 @@ const SlideItem: FC<ISlideItem> = ({ slide, buttonTitle = 'Watch' }) => {
 					layout="fill"
 					className={styles.image}
 					src={slide.bigPoster}
-					alt={slide.title}
+					alt={slide.name}
 					draggable={false}
 					unoptimized
 					priority
 				/>
 			)}
 			<div className={styles.content}>
-				<div className={styles.heading}>{slide.title}</div>
+				<div className={styles.heading}>{slide.name}</div>
 				<div className={styles.subHeading}>{slide.subTitle}</div>
 				<button className={styles.button} onClick={() => push(slide.link)}>
 					{buttonTitle}
