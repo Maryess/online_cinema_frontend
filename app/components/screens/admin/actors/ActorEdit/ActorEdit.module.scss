@@ -1,0 +1,29 @@
+.form{
+    @apply w-full;
+    .content{
+        .fields{
+            .headerFields,
+            .wrapperFields,
+            .uploadsFIelds
+            {
+                @apply flex mt-6 justify-between;
+            }
+
+            .headerFields{
+                >input{
+                    @apply w-80;
+                }
+            }
+
+            .wrapperFields{
+                >input{
+                    @apply w-80 mb-5;
+                }
+            }
+        }
+
+        >button{
+            @apply mt-10;
+        }
+    }
+}

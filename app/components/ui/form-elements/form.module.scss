@@ -4,11 +4,11 @@
     .uploadFlex {
 
         >label {
-        @apply block;
+        @apply block text-gray-600;
 
         >input {
             @apply file:bg-primary file:rounded-xl 
-            file:border-none file:w-36 file:h-10 file:text-white file:opacity-30 file:mr-4;
+            file:border-none file:w-36 file:h-10 file:text-white file:opacity-30 file:mr-4 ;
         }
         }
         

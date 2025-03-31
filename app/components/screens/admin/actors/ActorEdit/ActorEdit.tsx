@@ -12,71 +12,15 @@ import { useActorEdit } from './useActorEdit'
 import Select from 'react-select'
 import { useQuery } from 'react-query'
 import { MovieService } from 'services/MovieService'
+import ActorEditForm from './ActorEditForm'
 
 const ActorEdit:FC = () => {
-  const {handleSubmit, register, formState:{errors}, setValue, getValues, control} = useForm<IActorEditInput>({
-    mode:'onChange'
-  })
-
-  const {isLoading,onSubmit} = useActorEdit(setValue)
 
   return (
     <Meta title="Edit actor">
       <AdminNavigation/>
       <Heading title='Edit actor' className='text-3xl mb-4'/>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        {isLoading ? <SkeletonLoader count={3}/> : 
-        <div className={styles.content}>
-          <div className={styles.fields}>
-            <Field
-              {...register('name', {
-            required: 'Name is required!',
-            
-            })}
-            placeholder="Name"
-            style={{width:'31%'}}
-            /> 
-            <Field
-              {...register('slug', {
-            required: 'Slug is required!',
-            
-            })}
-            placeholder="Slug"
-            style={{width:'31%'}}
-            />
-            <Field
-              {...register('year', {
-            required: 'Year is required!',
-            
-            })}
-            placeholder="Year"
-            style={{width:'31%'}}
-            />
-            <Field
-              {...register('country', {
-            required: 'Country is required!',
-            
-            })}
-            placeholder="Country"
-            style={{width:'31%'}}
-            />
-             <Field
-              {...register('photo', {
-            required: 'Country is required!',
-            
-            })}
-            type='file'
-            placeholder="Photo"
-            style={{width:'31%'}}
-            />
-          </div>
-            <Button
-                type="submit"     
-            >
-                Update
-            </Button>
-        </div>}
-      </form>
+      <ActorEditForm/>
     </Meta>
   )
 }
