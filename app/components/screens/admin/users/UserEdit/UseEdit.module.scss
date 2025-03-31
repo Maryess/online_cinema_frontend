@@ -1,0 +1,14 @@
+.form{
+    
+    .content{
+        .fields{
+            >input{
+                @apply mt-4;
+            }
+        }
+
+        >button{
+            @apply mt-8;
+        }
+    }
+}

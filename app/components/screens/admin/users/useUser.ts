@@ -1,5 +1,5 @@
 import { IAdminTableItem, ITableItem } from "components/ui/admin-table/admin-table.interface"
-import { getMovieUrl } from "config/api.config"
+import { getAdminUrl, getMovieUrl } from "config/api.config"
 import { useDebounce } from "hooks/useDebounce"
 import { useMemo, useState } from "react"
 import { useMutation, useQuery } from "react-query"
@@ -16,8 +16,8 @@ export const useUser=() => {
                      select: ({data}) => data.map((user):IAdminTableItem => 
                         ({
                             id:user.id,
-                            editUrl:getMovieUrl(`/edit/${user.id}`),
-                            items: [user.email, user.password]
+                            editUrl:getAdminUrl(`/user/edit/${user.id}`),
+                            items: [user.email, String(user.isAdmin)]
                 }))
     })
     const {mutateAsync:deleteAsync} = useMutation('delete user',(userId:string)=>(UserService.deleteUserById(userId)

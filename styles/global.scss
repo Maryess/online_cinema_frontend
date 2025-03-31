@@ -1,30 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'react-redux-toastr/src/styles/index';
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import './react-select.scss';
+@import 'react-redux-toastr/src/styles/index';
 
 html,
-body{
-  padding: 0;
-  margin: 0;
-  font-family:'Outfit',sans-serif;
-  background-color: #2B274D;
-  @apply bg-gray-900;
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Outfit', sans-serif;
+
+	@apply bg-gray-900;
 }
 
-a{
-  color: inherit;
-  text-decoration: none;
+a {
+	color: inherit;
+	text-decoration: none;
 }
 
-*{
-  box-sizing: border-box;
+* {
+	box-sizing: border-box;
 }
 
-:root{
-  --primary-color:#e30b13;
+:root {
+	--primary-color: #e30b13;
 }
 
 input[type="file"],

@@ -11,7 +11,7 @@ const MovieItem:FC<{movie:ISideBarMovie}>= ({movie}) => {
   return (
     <div className={styles.content} >
        <Link href={movie.slug}>
-            <img src={movie.poster} alt={movie.name} width={65} height={97} draggable={false}/>
+            <img src={`/${movie.poster}`} alt={movie.name} width={65} height={97} draggable={false}/>
        </Link>
        <div className={styles.info} >
             <span>{movie.name}</span>

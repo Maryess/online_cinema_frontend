@@ -4,8 +4,13 @@ import { getActorUrl } from "config/api.config";
 import { IActor } from "shared/types/movie.types";
 
 export const ActorService = {
-    async getAll(){
-        return axiosDefault.get<IActor[]>(getActorUrl(''))
+    async getAll(searchTerm?:string){
+        return axiosDefault.get<IActor[]>(getActorUrl(''),
+       { params: searchTerm
+        ? {
+                searchTerm,
+          }
+        : {},})
     } ,
     async getById(actorId:string){
         return axiosDefault.get<IActor>(getActorUrl(`/${actorId}`))

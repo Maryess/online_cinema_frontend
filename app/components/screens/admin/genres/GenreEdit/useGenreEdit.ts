@@ -5,6 +5,7 @@ import { useRouter } from "next/router"
 import { GenreService } from "services/GenreService"
 import { toastr } from "react-redux-toastr"
 import { getAdminUrl } from "config/api.config"
+import { useMemo } from "react"
 
 export const useGenreEdit = (setValue:UseFormSetValue<IGenreEditInput>) => {
 
@@ -39,9 +40,33 @@ export const useGenreEdit = (setValue:UseFormSetValue<IGenreEditInput>) => {
     }
     )
 
+    const {mutateAsync:deleteAsync} = useMutation('delete genre', ()=>
+        GenreService.deleteGenreById(genreId),{
+            onSuccess(){
+                toastr.success('Delete genre', 'Delete successfully')
+                // push(getAdminUrl(`/genres`))
+            },
+            onError(error) {
+                toastr.error(`${error}`, 'Delete genre')
+            }
+        }
+        )
+
+    const {mutateAsync:createAsync} = useMutation('create genre', () => 
+    GenreService.create(),{
+        onSuccess({data:id}){
+            toastr.success('Create genre', 'Create successfully')
+            push(getAdminUrl(`/genre/edit/${id}`))
+        },
+        onError(error) {
+            toastr.error(`${error}`, 'Create genre')
+        }
+    }
+    )
+
     const onSubmit:SubmitHandler<IGenreEditInput> = async (data) =>{
         await updateAsync(data)
     }
 
-    return {isLoading, onSubmit}
+    return useMemo(()=>({isLoading, onSubmit , createAsync}), [isLoading,onSubmit, createAsync])
 }

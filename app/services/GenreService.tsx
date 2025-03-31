@@ -4,8 +4,16 @@ import { getGenreUrl } from "config/api.config";
 import { IGenre } from "shared/types/movie.types";
 
 export const GenreService = {
-    async getAll(){
-        return axiosDefault.get<IGenre[]>(getGenreUrl(''))
+
+    async create(){
+        return axiosDefault.post<string>(getGenreUrl(''),{
+            
+        })
+    },
+    async getAll(searchTerm?:string){
+        return axiosDefault.get<IGenre[]>(getGenreUrl(''), {
+            params: searchTerm ? { searchTerm } : {}
+        })
     },
     async getById(genreId:string){
         return axiosDefault.get<IGenreEditInput>(getGenreUrl(`/${genreId}`))

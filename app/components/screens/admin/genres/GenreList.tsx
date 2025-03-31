@@ -6,18 +6,18 @@ import Meta from 'utils/meta/Meta'
 import AdminTable from 'components/ui/admin-table/AdminTable'
 import { useGenre } from './useGenre'
 import AdminTableHeader from 'components/ui/admin-table/AdminTableHeader'
+import { useGenreEdit } from './GenreEdit/useGenreEdit'
 
 const GenreList:FC = () => {
 
-    const {data, isLoading, deleteAsync} = useGenre()
-   
+    const {data, isLoading, deleteAsync, createAsync, handleSearch, searchTerm} = useGenre()
   return (
-   <Meta title='Create genre'>
-        <AdminNavigation/>
-        <Heading title='Genres' className='text-3xl mb-4'/>
-        <AdminTableHeader/>
-        <AdminTable tableItems={data || []} isLoading={isLoading} removeHandler={deleteAsync} />
-   </Meta>
+    <Meta title="Create genre">
+    <AdminNavigation />
+    <Heading title="Genres" className="text-3xl mb-4" />
+    <AdminTableHeader createHandler={createAsync} handleSearch={handleSearch} searchTerm={searchTerm} /> {/* Передаем searchTerm */}
+    <AdminTable tableItems={data || []} isLoading={isLoading} removeHandler={deleteAsync} />
+</Meta>
   )
 }
 

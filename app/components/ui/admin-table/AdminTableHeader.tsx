@@ -1,13 +1,16 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import SearchField from '../search-field/SearchField'
 import Button from '../auth/button/Button'
 import styles from './AdminTable.module.scss'
+import { ITableHeader } from './admin-table.interface'
 
-const AdminTableHeader:FC = () => {
+
+const AdminTableHeader:FC<ITableHeader> = ({createHandler,searchTerm, handleSearch}) => {
+
   return (
     <div className={styles.header}>
-        <SearchField searchTerm=''/>
-        <Button>Create new</Button>
+        <SearchField handleSearch={handleSearch} searchTerm={searchTerm}/>
+        <Button onClick={createHandler}>Create new</Button>
     </div>
   )
 }

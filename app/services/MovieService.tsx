@@ -1,8 +1,15 @@
 import { axiosDefault } from "api/interceprots"
+import { IMovieEditInput } from "components/screens/admin/movies/MovieEdit/movie-edit.interface"
 import { getMovieUrl } from "config/api.config"
 import { IMovie } from "shared/types/movie.types"
 
 export const MovieService = {
+
+    async create(){
+        return axiosDefault.post<string>(getMovieUrl(''),{ 
+        })
+    },
+
     async getAllSearch (searchTerm?:string){
        return axiosDefault.get<IMovie[]>(getMovieUrl(''),{
         params:searchTerm?{
@@ -14,25 +21,25 @@ export const MovieService = {
        })
     },
 
-    async deleteMovieById(id:string){
-        return axiosDefault.delete<string>(getMovieUrl(`/${id}`))
+   async update(movieId:string, data:IMovieEditInput){
+           return axiosDefault.put<string>(getMovieUrl(`/${movieId}`), data)
+       },
+
+    async deleteMovieById(movieId:string){
+        return axiosDefault.delete<string>(getMovieUrl(`/${movieId}`))
     },
 
-    async getAll(){
-        return axiosDefault.get<IMovie[]>(getMovieUrl(''))
+    async getById(movieId:string){   
+        return axiosDefault.get<IMovieEditInput>(getMovieUrl(`/${movieId}`))
     },
 
-    async createMovie(name:string,duration:number,poster:string,bigPoster:string,videoUrl:string,country:string,year:number){
-        const response = await axiosDefault.post('/movie',{
-            name,
-            duration,
-            country,
-            year,
-            poster,
-            bigPoster,
-            videoUrl
-        })
-
-        return response
-    }
+    async getAll(searchTerm?: string) {
+		return axiosDefault.get<IMovie[]>(getMovieUrl(``), {
+			params: searchTerm
+				? {
+						searchTerm,
+				  }
+				: {},
+		})
+	}
 }

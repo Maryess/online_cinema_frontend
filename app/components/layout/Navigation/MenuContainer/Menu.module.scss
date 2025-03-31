@@ -14,8 +14,9 @@ $width-content:300px;
   .heading{
     @apply text-xs font-medium;
   }
+}
 
-  .li{
+.li{
     @apply hover:text-gray-500;
 
     .link_content{
@@ -31,4 +32,3 @@ $width-content:300px;
       }
     } 
   }
-}

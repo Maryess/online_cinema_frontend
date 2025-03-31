@@ -5,11 +5,6 @@ import Cookies from "js-cookie"
 import { AuthService } from "services/auth/AuthService";
 import { removeTokensStorage } from "services/auth/auth.helper";
 
-export const axiosDefault = axios.create({
-    baseURL: SERVER_URL,
-    headers: getContentType()
-})
-
 export const instance = axios.create({
     baseURL: SERVER_URL,
     headers: getContentType()
@@ -42,3 +37,10 @@ async error => {
 })
 
 export default instance
+
+export const axiosDefault = axios.create({
+	baseURL: SERVER_URL,
+	headers: {
+		'Content-Type': 'application/json',
+	},
+})

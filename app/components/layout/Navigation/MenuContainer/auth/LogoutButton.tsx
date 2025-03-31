@@ -1,7 +1,6 @@
 import MaterialIcon from 'components/ui/MaterialIcon'
 import { useActions } from 'hooks/useAction'
 import { FC, MouseEvent } from 'react'
-import cn from 'classnames'
 import styles from '../Menu.module.scss'
 import MenuItem from '../MenuItem'
 
@@ -14,13 +13,18 @@ const LogoutButton:FC = () => {
     }
 
   return (
-
     <MenuItem itemMenu={{
+      onClick:handleLogout,
       icon:"MdLogout",
-      link:'/auth',
-      name:'Logout',
-      onClick:handleLogout
-    }}/>
+      link:'',
+      name:'Logout'}}
+      />
+    // <li className={styles.li}>
+		// 	<a onClick={logout} className={styles.li_content}>
+		// 		<MaterialIcon name="MdLogout" />
+		// 		<span> Logout</span>
+		// 	</a>
+		// </li>
   )
 }
 

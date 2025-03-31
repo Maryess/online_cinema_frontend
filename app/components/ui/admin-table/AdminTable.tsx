@@ -6,9 +6,9 @@ import AdminTableItem from './AdminTableItem';
 
 interface IAdminTable{
     tableItems: IAdminTableItem[],
-    headerItems?:string;
-    removeHandler: (id:string) => void;
-    isLoading:boolean;
+    headerItems?:string,
+    removeHandler: (id:string) => void,
+    isLoading:boolean
 }
 
 const AdminTable:FC<IAdminTable> = ({removeHandler,headerItems,tableItems,isLoading}) => {
@@ -16,7 +16,7 @@ const AdminTable:FC<IAdminTable> = ({removeHandler,headerItems,tableItems,isLoad
     <div className={styles.table}>
        {isLoading? 
        <SkeletonLoader count={4} height={48} className='mt-4'/>: 
-       tableItems.length ? tableItems.map((el)=> <AdminTableItem tableItem={el} removeHandler={()=>removeHandler(el.id)} key={el.id}/>) : 'elements not found'
+       tableItems.length ? tableItems.map((el)=> <AdminTableItem tableItem={el} removeHandler={()=>removeHandler(el.id)} key={el.id}/>) : 'Elements not found'
        }
     </div>
   )
