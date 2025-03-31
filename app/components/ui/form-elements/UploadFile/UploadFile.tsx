@@ -6,7 +6,7 @@ import SkeletonLoader from 'components/ui/SkeletonLoader'
 import Image from 'next/image'
 
 
-const UploadFile:FC<IUploadFile> = ({isNoImage = false, value, folder, onChange,style}) => {
+const UploadFile:FC<IUploadFile> = ({isNoImage = false, value, folder, onChange,style, placeholder}) => {
 
     const {uploadFile, isLoading} = useUploadFile(onChange, folder)
 
@@ -14,13 +14,13 @@ const UploadFile:FC<IUploadFile> = ({isNoImage = false, value, folder, onChange,
     <div className={styles.uploadField} style={style}>
         <div className={styles.uploadFlex}>
             <label>
-                <input type="file" onChange={uploadFile}/>
+                <input type="file" onChange={uploadFile} placeholder={placeholder}/>
             </label>
 
             {!isNoImage && <div className={styles.uploadImageContainer}> 
                 {
                 isLoading? <SkeletonLoader count={1} className='w-full h-full'/>: 
-                <Image alt='' src={value} layout='fill' unoptimized/>}
+                <Image alt='' src={value} width={130} height={130} unoptimized/>}
                 </div>   
             }
         </div>

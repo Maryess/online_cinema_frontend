@@ -43,7 +43,7 @@ const GenreEdit:FC = () => {
             />
           </div>
             <Button
-                type="submit"     
+                type="submit"   
             >
                 Update
             </Button>

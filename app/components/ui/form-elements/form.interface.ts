@@ -5,5 +5,6 @@ export interface IUploadFile {
     value:string,
     onChange:(event:any[]) => void ,
     isNoImage?:boolean,
-    style?:CSSProperties
+    style?:CSSProperties,
+    placeholder:string;
 }

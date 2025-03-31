@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 export interface IAdminTableItem{
     id:string;
     editUrl:string;
@@ -6,5 +8,11 @@ export interface IAdminTableItem{
 
 export interface ITableItem{
     tableItem:IAdminTableItem;
-    removeHandler: () => void
+    removeHandler: (id:string) => void
+}
+
+export interface ITableHeader{
+    createHandler: () => void,
+    searchTerm:string,
+    handleSearch:(e:ChangeEvent<HTMLInputElement>)=>void,
 }

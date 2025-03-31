@@ -1,0 +1,7 @@
+.selectContainer{
+    @apply relative mb-8 animate-fade;
+
+    >label{
+        @apply block;
+    }
+}

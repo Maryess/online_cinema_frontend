@@ -1,0 +1,10 @@
+.uploadField{
+    @apply flex w-7 h-7;
+
+    .uploadFlex{
+
+        .uploadImageContainer{
+            @apply h-5 w-5;
+        }
+    }
+}

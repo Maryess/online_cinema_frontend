@@ -1,0 +1,18 @@
+.form{
+    .content{
+        .fields{
+          
+
+            .headerFields,
+            .centerFields,
+            .wrapperFields
+            {
+                @apply flex justify-between ml-1;
+
+                >input{
+                    @apply mx-4;
+                }
+            }
+        }
+    }
+}
