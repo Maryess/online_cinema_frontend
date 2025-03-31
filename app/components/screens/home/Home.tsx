@@ -18,25 +18,6 @@ import UploadFile from "components/ui/form-elements/UploadFile/UploadFile"
          {slides.length && <Slider slides={slides} />}
          <Gallery item={slidesActors}/>
          <Gallery item={slidesTrendingMovies}/>
-         <Controller
-                                name="poster"
-                                control={control}
-                                defaultValue=""
-                                render={({
-                                    field: { value, onChange },
-                                    fieldState: { error },
-                                }) => (
-                                    <UploadFile
-                                        placeholder={value}
-                                        folder='movies'
-                                        onChange={onChange}
-                                        value={value}
-                                    />
-                                )}
-                                rules={{
-                                    required: 'Poster is required!',
-                                }}
-                            />
       </Meta>
    ) 
  }

@@ -139,11 +139,30 @@ const MovieEditForm:FC = () => {
                                         placeholder={value}
                                         folder='movies'
                                         onChange={onChange}
-                                        value={`/${value}`}
+                                        value={value}
                                     />
                                 )}
                                 rules={{
                                     required: 'Poster is required!',
+                                }}
+                            />
+                             <Controller
+                                name="bigPoster"
+                                control={control}
+                                defaultValue=""
+                                render={({
+                                    field: { value, onChange },
+                                    fieldState: { error },
+                                }) => (
+                                    <UploadFile
+                                        placeholder={value}
+                                        folder='movies'
+                                        onChange={onChange}
+                                        value={value}
+                                    />
+                                )}
+                                rules={{
+                                    required: 'Big poster is required!',
                                 }}
                             />
                             

@@ -14,13 +14,13 @@ const UploadFile:FC<IUploadFile> = ({isNoImage = false, value, folder, onChange,
     <div className={styles.uploadField} style={style}>
         <div className={styles.uploadFlex}>
             <label>
-                <input type="file" onChange={uploadFile} placeholder={placeholder}/>
+                <input type="file" onChange={uploadFile} placeholder={placeholder} className={styles.input}/>
             </label>
 
             {!isNoImage && <div className={styles.uploadImageContainer}> 
                 {
                 isLoading? <SkeletonLoader count={1} className='w-full h-full'/>: 
-                <Image alt='' src={value} width={130} height={130} unoptimized/>}
+                <Image alt='' src={value} layout='fill' unoptimized/>}
                 </div>   
             }
         </div>

@@ -8,7 +8,7 @@ export interface IAdminTableItem{
 
 export interface ITableItem{
     tableItem:IAdminTableItem;
-    removeHandler: (id:string) => void
+    removeHandler: () => void
 }
 
 export interface ITableHeader{

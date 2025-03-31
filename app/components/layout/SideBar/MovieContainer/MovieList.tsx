@@ -11,7 +11,7 @@ const MovieList:FC<IMovieList> = ({title,movies}) => {
       <span>{title}</span>
       { movies.map((el)=>{
         return <MovieItem key={el.name} movie={el}/>
-      })}
+      }).splice(0,2)}
       </div>
   )
 }

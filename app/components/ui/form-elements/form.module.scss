@@ -1,10 +1,23 @@
-.uploadField{
-    @apply flex w-7 h-7;
+.uploadField {
+    @apply relative;
 
-    .uploadFlex{
+    .uploadFlex {
 
-        .uploadImageContainer{
-            @apply h-5 w-5;
+        >label {
+        @apply block;
+
+        >input {
+            @apply file:bg-primary file:rounded-xl 
+            file:border-none file:w-36 file:h-10 file:text-white file:opacity-30 file:mr-4;
+        }
+        }
+        
+        .uploadImageContainer {
+           @apply relative shrink-0 w-24 h-24;
+
+           >img{
+            @apply rounded-image mt-4 object-cover;
+           }
         }
     }
 }
