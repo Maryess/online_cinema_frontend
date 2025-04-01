@@ -7,108 +7,108 @@ export const useVideo = () => {
   const [videoTime, setVideoTime] = useState(0);
   const [progress, setProgress] = useState(0);
 
+  const formatTime = (seconds: number): string => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+  };
+
+  const formatCurrentTime = formatTime(currentTime)
+  const formatVideoTime =formatTime(videoTime)
+
   const videoRef = useRef<IVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      setVideoTime(videoRef.current.duration || 0);
-    }
-  }, [videoRef]);
+    if (videoRef.current?.duration) setVideoTime(videoRef.current.duration)
+}, [videoRef.current?.duration])
 
-  const toggleVideo = useCallback(() => {
-    if (videoRef.current) {
-      if (!isPlaying) {
-        videoRef.current.play();
-        setIsPlaying(true);
-      } else {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      }
-    }
-  }, [isPlaying]);
-
-  const forward = useCallback(() => {
-    if (videoRef.current) {
-      videoRef.current.currentTime += 10;
-      if (videoRef.current.currentTime > videoTime) {
-        videoRef.current.currentTime = videoTime;
-      }
-    }
-  }, [videoTime]);
-
-  const revert = useCallback(() => {
-    if (videoRef.current) {
-      videoRef.current.currentTime -= 10;
-      if (videoRef.current.currentTime < 0) {
-        videoRef.current.currentTime = 0;
-      }
-    }
-  }, []);
-
-  const fullScreen = useCallback(() => {
-    const video = videoRef.current;
-
-    if (!video) return;
-
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
+const toggleVideo = useCallback(() => {
+    if (!isPlaying) {
+        videoRef.current?.play()
+        setIsPlaying(true)
     } else {
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.msRequestFullscreen) {
-        video.msRequestFullscreen();
-      } else if (video.mozRequestFullscreen) {
-        video.mozRequestFullscreen();
-      } else if (video.webkitRequestFullscreen) {
-        video.webkitRequestFullscreen();
-      }
+        videoRef.current?.pause()
+        setIsPlaying(false)
     }
-  }, []);
+}, [isPlaying])
 
-  useEffect(() => {
-    const video = videoRef.current;
+const forward = () => {
+    if (videoRef.current) videoRef.current.currentTime += 10
+}
 
-    if (!video) return;
+const revert = () => {
+    if (videoRef.current) videoRef.current.currentTime -= 10
+}
+
+const fullScreen = () => {
+    const video = videoRef.current
+
+    if (!video) return
+
+    if (video.requestFullscreen) {
+        video.requestFullscreen()
+    } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen()
+    } else if (video.mozRequestFullscreen) {
+        video.mozRequestFullscreen()
+    } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen()
+    }
+}
+
+useEffect(() => {
+    const video = videoRef.current
+
+    if (!video) return
 
     const updateProgress = () => {
-      setCurrentTime(video.currentTime);
-      setProgress((video.currentTime / videoTime) * 100);
-    };
+        setCurrentTime(video.currentTime)
+        setProgress((video.currentTime / videoTime) * 100)
+    }
 
-    video.addEventListener("timeupdate", updateProgress);
-
-    return () => {
-      video.removeEventListener("timeupdate", updateProgress);
-    };
-  }, [videoTime]);
-
-  useEffect(() => {
-    const keyBoard = (e: KeyboardEvent) => {
-      switch (e.key) {
-        case "ArrowRight":
-          forward();
-          break;
-        case "ArrowLeft":
-          revert();
-          break;
-        case " ":
-          e.preventDefault();
-          toggleVideo();
-          break;
-        case "f":
-          fullScreen();
-          break;
-        default:
-          return;
-      }
-    };
-
-    document.addEventListener("keydown", keyBoard);
+    video.addEventListener('timeupdate', updateProgress)
 
     return () => {
-      document.removeEventListener("keydown", keyBoard);
-    };
-  }, [toggleVideo, forward, revert, fullScreen]);
+        video.removeEventListener('timeupdate', updateProgress)
+    }
+}, [videoTime])
+
+useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+        switch (e.key) {
+            case 'ArrowRight': {
+                forward()
+                break
+            }
+
+            case 'ArrowLeft': {
+                revert()
+                break
+            }
+
+            case ' ': {
+                e.preventDefault()
+                toggleVideo()
+                break
+            }
+
+            case 'f': {
+                fullScreen()
+                break
+            }
+
+            default: {
+                return
+            }
+        }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+        document.removeEventListener('keydown', handleKeyDown)
+    }
+}, [toggleVideo])
 
   return useMemo(
     () => ({
@@ -121,6 +121,8 @@ export const useVideo = () => {
       forward,
       revert,
       fullScreen,
+      formatCurrentTime,
+      formatVideoTime
     }),
     [
       videoRef,
@@ -132,6 +134,8 @@ export const useVideo = () => {
       forward,
       revert,
       fullScreen,
+      formatCurrentTime,
+      formatVideoTime
     ]
   );
 };

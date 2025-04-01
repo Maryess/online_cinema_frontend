@@ -1,0 +1,13 @@
+.info{
+    @apply text-white absolute bottom-0 px-6;
+
+    >h3{
+        @apply text-4xl;
+    }
+    .description{
+        @apply mb-3 mt-1 text-xs text-gray-300;
+    }
+    .genres, .actors{
+        @apply text-sm text-gray-500;
+    }
+}

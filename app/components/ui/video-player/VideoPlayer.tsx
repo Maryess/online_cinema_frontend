@@ -8,33 +8,46 @@ import AuthPlaceholder from './AuthPlaceholder/AuthPlaceholder'
 import MaterialIcon from '../MaterialIcon'
 
 const VideoPlayer:FC<IVideoPlayer> = ({slug,videoSource}) => {
-    console.log("videoSource:", videoSource); // Добавьте это
-  const {videoRef, currentTime,videoTime,toggleVideo,
-    progress,isPlaying,forward,revert,fullScreen} = useVideo()
+
+    const {videoRef, currentTime,videoTime,toggleVideo,
+    progress,isPlaying,forward,revert,fullScreen,
+    formatVideoTime, formatCurrentTime
+    } = useVideo()
 
     const {user} = useAuth()
 
   return (
-    <div>
-        {user? <div>
+    <div className={styles.videoPlayer}>
+        {user? 
+        <div>
             <video className={styles.video} ref={videoRef} src={`/${videoSource}#t=8`}
             preload='metadata'
             />
-            <div style={{width:`${progress}%`}}></div>
-            <div>
-                <div>
+           <div className={styles.progress}>
+						<div
+							style={{ width: `${progress}%` }}
+							className={styles.progressBar}
+						/>
+				</div>
+            <div className={styles.actions}>
+                <div className={styles.buttons}>
                     <button onClick={revert}>
                         <MaterialIcon name='MdHistory'/>
                     </button>
                     <button onClick={toggleVideo}>
-                        <MaterialIcon name='MdPause'/>
+                        {
+                            isPlaying ?  <MaterialIcon name='MdPause'/> :
+                             <MaterialIcon name='MdPlayArrow'/>
+                        }
                     </button>
                     <button onClick={forward}>
                         <MaterialIcon name='MdUpdate'/>
                     </button>
                 </div>
-                <div>
-
+                <div className={styles.time}>
+                        <p>{formatCurrentTime}</p>
+                        <p>/</p>
+                        <p>{formatVideoTime}</p>
                 </div>
             </div>
         </div> : <AuthPlaceholder slug={slug}/>}
