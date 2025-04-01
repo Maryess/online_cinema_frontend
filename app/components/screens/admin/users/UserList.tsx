@@ -16,7 +16,7 @@ const UserList:FC = () => {
    <Meta title='Create user'>
         <AdminNavigation/>
         <Heading title='Users' className='text-3xl mb-4'/>
-        <AdminTableHeader />
+        <AdminTableHeader searchTerm='' createHandler={()=>{}} handleSearch={()=>{}}/>
         <AdminTable tableItems={data || []} isLoading={isLoading} removeHandler={deleteAsync} />
    </Meta>
   )

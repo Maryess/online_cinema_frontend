@@ -1,0 +1,33 @@
+.videoPlayer{
+    @apply mt-12 rounded-2xl overflow-hidden shadow-xl relative animate-fade;
+
+    .video{
+        @apply rounded-layout;
+    }
+    .actions{
+        @apply flex absolute bottom-1 left-4;
+        .buttons{
+            >button{
+                @apply ml-1;
+                >svg{
+                    @apply text-gray-500 text-2xl ml-2 ;
+                }
+            }
+
+        }
+
+        .time{
+            @apply flex text-white ml-2;
+
+            >p{
+                @apply ml-1 text-sm text-gray-500;
+            }
+        }
+        
+    }
+    .progress{
+        @apply absolute left-4 right-4 bottom-10;
+        .progressBar{
+        @apply  bg-gray-600 h-1 ;}
+    }
+}

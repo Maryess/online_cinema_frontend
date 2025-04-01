@@ -33,6 +33,10 @@ export const MovieService = {
         return axiosDefault.get<IMovieEditInput>(getMovieUrl(`/${movieId}`))
     },
 
+    async getBySlug(slug:string){
+        return axiosDefault.get<IMovie>(getMovieUrl(`/${slug}`))
+    },
+
     async getAll(searchTerm?: string) {
 		return axiosDefault.get<IMovie[]>(getMovieUrl(``), {
 			params: searchTerm

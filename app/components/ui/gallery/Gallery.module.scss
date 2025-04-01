@@ -1,6 +1,7 @@
 .gallery{
     @apply flex ;
         >a{
+            @apply mt-2;
             >img{
                 @apply rounded-image mr-5;
             }

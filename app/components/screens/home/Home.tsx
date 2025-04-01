@@ -4,20 +4,22 @@ import { IHome } from "./home.interface"
 import Heading from "components/ui/heading/Heading"
 import Slider from "components/ui/slider/Slider"
 import Gallery from "components/ui/gallery/Gallery"
-import { Controller, useForm } from "react-hook-form"
-import UploadFile from "components/ui/form-elements/UploadFile/UploadFile"
+import styles from './Home.module.scss'
 
  const Home:FC<IHome> = ({slides, slidesActors, slidesTrendingMovies}) => {
-
-
-   const {control} = useForm()
 
    return (
       <Meta title="Watch movie online" description="Watch movies and TV shows free in your browser">
          <Heading title="Watch movie online"/>
          {slides.length && <Slider slides={slides} />}
-         <Gallery item={slidesActors}/>
-         <Gallery item={slidesTrendingMovies}/>
+         <div className={styles.movies}>
+            <Heading title="Trending movie"/>
+            <Gallery item={slidesTrendingMovies}/>
+         </div>
+         <div className={styles.actors}>
+            <Heading title="Best actors"/>
+            <Gallery item={slidesActors}/>
+         </div>
       </Meta>
    ) 
  }

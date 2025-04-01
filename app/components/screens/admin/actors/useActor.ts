@@ -32,10 +32,22 @@ export const useActor=() => {
         }
     })
 
+      const {mutateAsync:createAsync} = useMutation('create actor', () => 
+            ActorService.create(),{
+                onSuccess({data:id}){
+                    toastr.success('Create actor', 'Create successfully')
+                    queryData.refetch()
+                },
+                onError(error) {
+                    toastr.error(`${error}`, 'Create actor')
+                }
+            }
+            )
 
 
     return useMemo(()=>({ 
         ...queryData,
-        deleteAsync
-    }), [queryData, deleteAsync])
+        deleteAsync,
+        createAsync
+    }), [queryData, deleteAsync,createAsync])
 }

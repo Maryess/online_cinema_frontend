@@ -8,7 +8,6 @@ const GalleryItem:FC<IGalleryItem> = ({poster,url,name}) => {
         <Link href={url}>
             <img src={poster} height={150} width={100} alt={name} />
             <div className={styles.title}>
-                {name}
             </div>
         </Link>
   )

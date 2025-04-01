@@ -4,6 +4,6 @@ export interface IGallery {
 
 export interface IGalleryItem{
     poster:string;
-    name:string;
+    name?:string;
     url:string;
 }
