@@ -13,7 +13,7 @@ const Banner:FC<IBanner> = ({imagePath, Info}) => {
     <div className={styles.banner}>
         <Image  
           alt='' 
-          src={`/${imagePath}`}
+          src={`${imagePath}`}
           layout='fill'
           draggable={false}
           unoptimized

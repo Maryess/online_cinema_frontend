@@ -1,4 +1,5 @@
-import SingleMovie from 'components/screens/single-movie/SIngleMovie';
+
+import SingleMovie from 'components/screens/single-movie/SingleMovie';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { MovieService } from 'services/MovieService';
 import { IMovie } from 'shared/types/movie.types'

@@ -4,10 +4,14 @@
     >h3{
         @apply text-4xl;
     }
-    .description{
+    .information{
         @apply mb-3 mt-1 text-xs text-gray-300;
     }
     .genres, .actors{
         @apply text-sm text-gray-500;
     }
+}
+
+.description{
+    @apply text-gray-300 text-base mt-4 bg-gray-950 rounded-image p-2;
 }

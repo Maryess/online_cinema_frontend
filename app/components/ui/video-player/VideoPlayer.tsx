@@ -20,7 +20,7 @@ const VideoPlayer:FC<IVideoPlayer> = ({slug,videoSource}) => {
     <div className={styles.videoPlayer}>
         {user? 
         <div>
-            <video className={styles.video} ref={videoRef} src={`/${videoSource}#t=8`}
+            <video className={styles.video} ref={videoRef} src={`${videoSource}#t=0.5`}
             preload='metadata'
             />
            <div className={styles.progress}>

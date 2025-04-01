@@ -83,6 +83,16 @@ const MovieEditForm:FC = () => {
                     style={{width:'31%'}}
                     />
                 </div>
+                <div className='mt-4'>
+                <Field
+                    {...register('deskription', {
+                    required: 'Deskription is required!',
+                    
+                    })}
+                    placeholder="Deskription"
+                    style={{width:'31%'}}
+                    />
+                </div>
                 <div className={styles.wrapperFields}>
                         <Controller
                                 name="genres"
@@ -166,6 +176,27 @@ const MovieEditForm:FC = () => {
                                 }}
                             />
                             
+                </div>
+                <div className={styles.uploadsFIelds}>
+                         <Controller
+                                name="videoUrl"
+                                control={control}
+                                defaultValue=""
+                                render={({
+                                    field: { value, onChange },
+                                    fieldState: { error },
+                                }) => (
+                                    <UploadFile
+                                        placeholder={value}
+                                        folder='movies'
+                                        onChange={onChange}
+                                        value={value}
+                                    />
+                                )}
+                                rules={{
+                                    required: 'videoUrl poster is required!',
+                                }}
+                            />
                 </div>
             </div>
                 <Button 
