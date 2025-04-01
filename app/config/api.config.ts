@@ -7,3 +7,4 @@ export const getActorUrl = (slug:string) => `/actor${slug}`
 export const getGenreUrl = (slug:string) => `/genre${slug}`
 export const getRatingUrl = (slug:string) => `/rating${slug}`
 export const getAdminUrl = (url:string) => `/manage${url}`
+export const getFileUrl = (url:string) => `/uploads${url}`
