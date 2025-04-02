@@ -5,7 +5,7 @@ import { useRouter } from "next/router"
 import { GenreService } from "services/GenreService"
 import { toastr } from "react-redux-toastr"
 import { getAdminUrl } from "config/api.config"
-import { useMemo } from "react"
+import { useCallback, useMemo } from "react"
 
 export const useGenreEdit = (setValue:UseFormSetValue<IGenreEditInput>) => {
 
@@ -64,9 +64,9 @@ export const useGenreEdit = (setValue:UseFormSetValue<IGenreEditInput>) => {
     }
     )
 
-    const onSubmit:SubmitHandler<IGenreEditInput> = async (data) =>{
+    const onSubmit:SubmitHandler<IGenreEditInput> = useCallback( async (data) =>{
         await updateAsync(data)
-    }
+    }, [updateAsync])
 
     return useMemo(()=>({isLoading, onSubmit , createAsync}), [isLoading,onSubmit, createAsync])
 }

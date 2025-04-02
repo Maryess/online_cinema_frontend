@@ -32,15 +32,15 @@ const toggleVideo = useCallback(() => {
     }
 }, [isPlaying])
 
-const forward = () => {
+const forward = useCallback(() => {
     if (videoRef.current) videoRef.current.currentTime += 10
-}
+},[])
 
-const revert = () => {
+const revert = useCallback(() => {
     if (videoRef.current) videoRef.current.currentTime -= 10
-}
+}, [])
 
-const fullScreen = () => {
+const fullScreen = useCallback(() => {
     const video = videoRef.current
 
     if (!video) return
@@ -54,7 +54,7 @@ const fullScreen = () => {
     } else if (video.webkitRequestFullscreen) {
         video.webkitRequestFullscreen()
     }
-}
+}, [])
 
 useEffect(() => {
     const video = videoRef.current
@@ -108,7 +108,7 @@ useEffect(() => {
     return () => {
         document.removeEventListener('keydown', handleKeyDown)
     }
-}, [toggleVideo])
+}, [toggleVideo, revert, fullScreen, forward])
 
   return useMemo(
     () => ({

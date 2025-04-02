@@ -3,4 +3,6 @@ export const onlyText = (string:string, limit:null | number = null) => {
     .replace(/(<((?!br)[^>]+)>)/ig, '')
 
     if(limit) result = result.slice(0, limit) + '...'
+
+    return result
 }

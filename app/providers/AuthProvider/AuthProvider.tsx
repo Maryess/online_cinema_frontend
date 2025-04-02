@@ -1,33 +1,49 @@
 import { useActions } from 'hooks/useAction'
-import { useAuth } from 'hooks/useAuht'
 import { useRouter } from 'next/router'
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useCallback } from 'react'
 import { TypeComponentAuthFields } from 'shared/types/auth.types'
 import Cookies from 'js-cookie'
 import dynamic from 'next/dynamic'
+import { useAuth } from 'hooks/useAuht'
 
-const DynamicCheckRole = dynamic(()=> import('./CheckRole'), {
-  ssr:false
+const DynamicCheckRole = dynamic(() => import('./CheckRole'), {
+  ssr: false
 })
 
-const AuthProvider:FC<TypeComponentAuthFields> = ({children,Component: { isOnlyAdmin, isOnlyUser}}) => {
-  
-  const {user} = useAuth()
-  const {logout,checkAuth} = useActions()
+const AuthProvider: FC<TypeComponentAuthFields> = ({ 
+  children, 
+  Component: { isOnlyAdmin, isOnlyUser }
+}) => {
+  const { user } = useAuth()
+  const { logout, checkAuth } = useActions()
+  const { pathname } = useRouter()
 
-  const {pathname} = useRouter()
-
-  useEffect(()=>{
+  // Мемоизация функций
+  const stableCheckAuth = useCallback(() => {
     const accessToken = Cookies.get('accessToken')
-    if(accessToken) checkAuth()
-  },[]) 
+    if (accessToken) checkAuth()
+  }, [checkAuth])
 
-  useEffect(()=>{
+  const stableLogout = useCallback(() => {
+    logout()
+  }, [logout])
+
+  // Эффект для проверки авторизации
+  useEffect(() => {
+    stableCheckAuth()
+  }, [stableCheckAuth])
+
+  // Эффект для выхода при отсутствии refreshToken
+  useEffect(() => {
     const refreshToken = Cookies.get('refreshToken')
-    if(!refreshToken && user) logout()
-  }, [pathname])
+    if (!refreshToken && user) {
+      stableLogout()
+    }
+  }, [pathname, user, stableLogout])
 
-  return !isOnlyUser && !isOnlyAdmin ? <>{children}</> : <DynamicCheckRole Component={{isOnlyAdmin,isOnlyUser}}>{children}</DynamicCheckRole>
+  return !isOnlyUser && !isOnlyAdmin 
+    ? <>{children}</> 
+    : <DynamicCheckRole Component={{ isOnlyAdmin, isOnlyUser }}>{children}</DynamicCheckRole>
 }
 
 export default AuthProvider

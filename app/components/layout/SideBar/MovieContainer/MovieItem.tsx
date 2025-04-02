@@ -3,15 +3,15 @@ import { FC } from "react"
 import { IMovie } from 'shared/types/movie.types'
 import Link from 'next/link'
 import { ISideBarMovie } from './movie-list.interface'
+import Image from 'next/image'
 
 
 const MovieItem:FC<{movie:ISideBarMovie}>= ({movie}) => {
 
-
   return (
     <div className={styles.content} >
        <Link href={movie.slug}>
-            <img src={`${movie.poster}`} alt={movie.name} width={65} height={97} draggable={false}/>
+            <Image src={`${movie.poster}`} alt={movie.name} width={65} height={97} draggable={false}/>
        </Link>
        <div className={styles.info} >
             <span>{movie.name}</span>

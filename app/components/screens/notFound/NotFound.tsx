@@ -5,7 +5,7 @@ const NotFound:FC = () => {
   return (
     <div className='text-white'>
         <div>OOPS...</div>
-        <div> This page isn't found</div>
+        <div> This page not found</div>
     </div>
   )
 }

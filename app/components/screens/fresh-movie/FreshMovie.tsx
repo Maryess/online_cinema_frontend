@@ -6,6 +6,7 @@ import styles from './FreshModule.module.scss'
 import { getMovieUrl } from 'config/api.config'
 import Heading from 'components/ui/heading/Heading'
 import Meta from 'utils/meta/Meta'
+import Image from 'next/image'
 
 const FreshMovie:FC<IFreshMoviePage> = ({movies}) => {
   return (
@@ -14,9 +15,9 @@ const FreshMovie:FC<IFreshMoviePage> = ({movies}) => {
         <div className={styles.info}> Watch movies and series online without adds</div>
         <div className={styles.moviesContainer}>
         {  movies.map((el)=>(
-            <div className={styles.movie}>
+            <div key={el.name} className={styles.movie}>
                 <Link href={getMovieUrl(`/${el.slug}`)}>
-                    <img src={el.bigPoster} alt={el.name} />
+                    <Image src={el.bigPoster} width={200} height={300} alt={el.name} />
                     <div className={styles.title}>
                     {el.name}
                     </div>
