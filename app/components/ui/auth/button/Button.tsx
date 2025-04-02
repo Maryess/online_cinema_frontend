@@ -11,4 +11,6 @@ const Button = forwardRef<HTMLButtonElement, IButton>(({...rest },ref) => {
 }
 )
 
+Button.displayName = 'Button'
+
 export default Button

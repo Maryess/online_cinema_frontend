@@ -1,7 +1,7 @@
 import { IAdminTableItem, ITableItem } from "components/ui/admin-table/admin-table.interface"
 import { getAdminUrl, getMovieUrl } from "config/api.config"
 import { useDebounce } from "hooks/useDebounce"
-import { ChangeEvent, EventHandler, useMemo, useState } from "react"
+import { ChangeEvent, EventHandler, useCallback, useMemo, useState } from "react"
 import { useMutation, useQuery } from "react-query"
 import { toastr } from "react-redux-toastr"
 import { MovieService } from "services/MovieService"
@@ -20,9 +20,9 @@ export const useMovie=() => {
                 }))
     })
 
-    const handleSearch = (event:ChangeEvent<HTMLInputElement>) => {
+    const handleSearch = useCallback( (event:ChangeEvent<HTMLInputElement>) => {
 		setSearchTerm(event.target.value);
-	};
+	}, []);
 
     const {mutateAsync:createAsync} = useMutation('create movie', ()=> 
     MovieService.create(),{

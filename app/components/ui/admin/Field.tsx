@@ -9,5 +9,6 @@ const AdminField= forwardRef<HTMLInputElement,IField>(({placeholder, ...rest }, 
 }
 )
 
+AdminField.displayName = 'AdminField'
 
 export default AdminField

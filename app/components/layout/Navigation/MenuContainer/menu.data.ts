@@ -14,7 +14,7 @@ export const menuItem:IMenu = {
     },
     {
         icon:"MdRefresh",
-        name:'Fresh movie',
+        name:'Fresh movies',
         link:'/fresh-movies'
     },
     {

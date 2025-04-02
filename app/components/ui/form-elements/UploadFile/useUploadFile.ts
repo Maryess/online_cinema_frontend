@@ -1,5 +1,5 @@
 import { error } from "console";
-import { ChangeEvent, useMemo, useState } from "react"
+import { ChangeEvent, useCallback, useMemo, useState } from "react"
 import { useMutation } from "react-query";
 import { toastr } from "react-redux-toastr";
 import { FileService } from "services/FileService";
@@ -24,7 +24,7 @@ export const useUploadFile:TypeUpload = (onChange,folder) => {
     }
 )
 
-    const uploadFile = async (e:ChangeEvent<HTMLInputElement>) => {
+    const uploadFile = useCallback( async (e:ChangeEvent<HTMLInputElement>) => {
         setIsLoading(true)
 
         const files = e.target.files
@@ -37,7 +37,7 @@ export const useUploadFile:TypeUpload = (onChange,folder) => {
         await mutateAsync(formData)
 
         setTimeout(()=>{setIsLoading(false)}, 1000)
-    }
+    }, [])
 
     return useMemo(()=> ({
         uploadFile, isLoading
