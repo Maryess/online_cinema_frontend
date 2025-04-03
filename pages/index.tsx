@@ -9,6 +9,7 @@ import { MovieService } from "services/MovieService"
 
 
 const HomePage: NextPage<IHome>= ({slides,slidesActors, slidesTrendingMovies}) =>{
+    console.log(slides,slidesActors, slidesTrendingMovies)
     return <div>
        <Home slides={slides} slidesActors={slidesActors} slidesTrendingMovies={slidesTrendingMovies}/>
     </div>
