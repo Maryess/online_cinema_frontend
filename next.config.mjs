@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig  = {
+    reactStrictMode:true,
     poweredByHeader:false,
+    output:'standalone',
+    experimental:{
+        appDir:false
+    },
     env:{
         "APP_SERVER_URL":process.env.SERVER_URL,
         
