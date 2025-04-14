@@ -1,0 +1,13 @@
+.editor{
+    @apply w-96  border-gray-800 border-2 bg-gray-800 rounded-image ;
+    .header{
+        >button {
+            >svg{
+                @apply text-white;
+            }
+        }
+    }
+    .input{
+       @apply w-full h-full bg-gray-800 text-gray-300 outline-none border-t-2 border-gray-600;
+    }
+}

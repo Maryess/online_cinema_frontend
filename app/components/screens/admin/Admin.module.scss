@@ -18,10 +18,10 @@
 
 
         .statistics{
-            @apply bg-gray-950 w-80 h-60 rounded-image;
+            @apply flex  justify-between;
 
             .users{
-                @apply text-white h-full flex justify-center items-center flex-col;
+                @apply w-80 h-60 bg-gray-950 text-white  flex justify-center items-center flex-col rounded-image;
                 >div{
                     @apply text-6xl;
                 }

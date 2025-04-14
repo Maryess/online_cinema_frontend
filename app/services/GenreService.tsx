@@ -18,6 +18,9 @@ export const GenreService = {
     async getById(genreId:string){
         return axiosDefault.get<IGenreEditInput>(getGenreUrl(`/${genreId}`))
     },
+    async getBySlug(slug:string){
+        return axiosDefault.get<IGenre>(getGenreUrl(`/${slug}`))
+    },
     async updateGenre(genreId:string, data:IGenreEditInput){
         return axiosDefault.put<string>(getGenreUrl(`/${genreId}`), data)
     },

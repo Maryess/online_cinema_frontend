@@ -4,9 +4,7 @@ import Meta from 'utils/meta/Meta'
 import { IMoviePage } from '../../../../pages/movie/[slug]'
 import dynamic from 'next/dynamic'
 import Banner from 'components/ui/banner/Banner'
-import Info from './Info/Info'
-import Description from './Info/Description'
-
+import Description from 'components/ui/banner/Info/Description'
 
 const DynamicPlayer = dynamic(()=> import('components/ui/video-player/VideoPlayer'), {
     ssr:false
@@ -15,11 +13,12 @@ const DynamicPlayer = dynamic(()=> import('components/ui/video-player/VideoPlaye
 const SingleMovie:FC<IMoviePage> = ({movie}) => {
   return (
     <Meta title={movie.slug} description=''>
-        <Banner imagePath={movie.bigPoster} 
-        Info={()=>
-        <Info title={movie.name}
-         genres={movie.genres || []} actors={movie.actors || []}  
-         information={`${movie.year}, ${movie.country}, ${movie.duration}(min)`}/>}/>
+        <Banner type='movie' imagePath={movie.bigPoster} info={{
+          title:movie.name,
+          description:`${movie.year}, ${ movie.country}, ${movie.duration} min`,
+          genres:movie.genres,
+          actors:movie.actors
+        }}/>
         <DynamicPlayer videoSource={movie.videoUrl} slug={movie.slug}/>
 
         <Description description={movie.deskription}/>

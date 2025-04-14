@@ -4,6 +4,7 @@ import styles from './Menu.module.scss'
 import MenuItem from "./MenuItem"
 import Heading from "components/ui/heading/Heading"
 import dynamic from "next/dynamic"
+import { getGenreUrl } from "config/api.config"
 
 const DynamicAuthItems = dynamic(() => import('./auth/AuthItem'), {
   ssr: false,

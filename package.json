@@ -7,7 +7,7 @@
   "description": "online cinema application",
   "version": "0.1.0",
   "private": true,
-  "type":"module",
+  "type": "module",
   "scripts": {
     "dev": "next dev -p 4201",
     "build": "next build",
@@ -16,9 +16,11 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
+    "@types/draft-js": "^0.11.18",
     "@types/js-cookie": "^3.0.6",
     "axios": "^1.7.9",
     "classnames": "^2.5.1",
+    "draft-js": "^0.11.7",
     "js-cookie": "^3.0.5",
     "next": "^15.2.3",
     "nextjs-progressbar": "^0.0.16",

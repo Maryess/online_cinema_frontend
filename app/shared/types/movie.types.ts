@@ -19,7 +19,7 @@ export interface IGenre {
     id:string;
     name:string;
     slug:string;
-
+    movies:IMovie[]
 }
 
 export interface IActor {

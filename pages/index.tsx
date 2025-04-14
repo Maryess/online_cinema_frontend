@@ -31,7 +31,7 @@ export const getStaticProps:GetStaticProps = async() => {
         const slidesActors:IGalleryItem[] = actors.map((actor)=>({
             poster:actor.photo,
             url:getActorUrl(`/${actor.slug}`),
-            name:actor.name
+            name:actor.name        
         }))
 
         const slidesTrendingMovies:IGalleryItem[] = trendingMovies.map((movie)=>({

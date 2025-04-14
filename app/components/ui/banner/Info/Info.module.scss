@@ -1,4 +1,4 @@
-.info{
+.infoMovie{
     @apply text-white absolute bottom-0 px-6;
 
     >h3{
@@ -14,4 +14,13 @@
 
 .description{
     @apply text-gray-300 text-base mt-4 bg-gray-950 rounded-image p-2;
+}
+
+.infoActor{
+    >h3{
+       @apply text-4xl text-white;
+    }
+    .information{
+        @apply text-gray-500
+    }
 }
