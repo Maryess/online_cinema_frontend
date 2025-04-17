@@ -1,0 +1,46 @@
+diff --git a/node_modules/react-redux-toastr/src/styles/index.scss b/node_modules/react-redux-toastr/src/styles/index.scss
+index 4ae175f..c02b824 100644
+--- a/node_modules/react-redux-toastr/src/styles/index.scss
++++ b/node_modules/react-redux-toastr/src/styles/index.scss
+@@ -1,4 +1,5 @@
+ @use "sass:math";
++@use "sass:color";
+ 
+ @import './variables.scss';
+ @import './animation.scss';
+@@ -184,7 +185,7 @@ body.toastr-confirm-active {
+       background-color: $infoBgColor;
+ 
+       .rrt-progressbar {
+-        background-color: darken($infoBgColor, 15%);
++        background-color:  color.adjust($infoBgColor, $lightness: -15%);
+       }
+     }
+ 
+@@ -192,7 +193,7 @@ body.toastr-confirm-active {
+       background-color: $successBgColor;
+ 
+       .rrt-progressbar {
+-        background-color: darken($successBgColor, 15%);
++        background-color: color.adjust($successBgColor, $lightness:  15%);
+       }
+     }
+ 
+@@ -200,7 +201,7 @@ body.toastr-confirm-active {
+       background-color: $warningBgColor;
+ 
+       .rrt-progressbar {
+-        background-color: darken($warningBgColor, 15%);
++        background-color: color.adjust($warningBgColor, $lightness: 15%);
+       }
+     }
+ 
+@@ -208,7 +209,7 @@ body.toastr-confirm-active {
+       background-color: $errorBgColor;
+ 
+       .rrt-progressbar {
+-        background-color: darken($errorBgColor, 15%);
++        background-color: color.adjust($errorBgColor, $lightness: 15%);
+       }
+     }
+ 

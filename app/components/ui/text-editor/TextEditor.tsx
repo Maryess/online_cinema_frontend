@@ -3,16 +3,18 @@ import { useEditor } from './useEditor'
 import styles from './TextEditor.module.scss'
 import MaterialIcon from '../MaterialIcon'
 import cn from 'classnames'
+import { ITextEditor } from './text-editor.interface'
 
-const TextEditor:FC = () => {
+const TextEditor:FC<ITextEditor> = ({buttons}) => {
 
-    const {handleTerm,weightText,stylesText,heightText} = useEditor()
+    const {handleTerm,stylesText} = useEditor()
 
   return (
     <div className={styles.editor}>
         <div className={styles.header}>
-            <button onClick={weightText}> <MaterialIcon name='MdFormatBold'/></button>
-            <button onClick={heightText}> <MaterialIcon name='MdFormatItalic'/></button>
+          {buttons.map((el)=>(
+            <button key={el.name} onClick={el.onCLick}> <MaterialIcon name={el.iconName}/></button>
+          ))}
         </div>
         <textarea onChange={handleTerm} className={cn(stylesText,styles.input)}></textarea>
         

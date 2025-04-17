@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { CSSTransition } from 'react-transition-group'
-
 import SlideArrow from './SlideArrow/SlideArrow'
 import SlideItem from './SlideItem'
 import styles from './Slider.module.scss'
@@ -22,7 +21,6 @@ const Slider: FC<ISlider> = ({ buttonTitle, slides }) => {
 			{isPrev && (
 				<SlideArrow variant="left" clickHandler={() => handleClick('prev')} />
 			)}
-
 			<CSSTransition
 				in={slideIn}
 				timeout={300}

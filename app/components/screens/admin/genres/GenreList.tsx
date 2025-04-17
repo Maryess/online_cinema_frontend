@@ -15,7 +15,7 @@ const GenreList:FC = () => {
     <Meta title="Create genre">
     <AdminNavigation />
     <Heading title="Genres" className="text-3xl mb-4" />
-    <AdminTableHeader createHandler={createAsync} handleSearch={handleSearch} searchTerm={searchTerm} /> {/* Передаем searchTerm */}
+    <AdminTableHeader createHandler={createAsync} handleSearch={handleSearch} searchTerm={searchTerm} /> 
     <AdminTable tableItems={data || []} isLoading={isLoading} removeHandler={deleteAsync} />
 </Meta>
   )

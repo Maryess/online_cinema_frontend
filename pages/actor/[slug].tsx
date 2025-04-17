@@ -3,8 +3,7 @@ import { IGalleryItem } from 'components/ui/gallery/gallery.interface';
 import { getMovieUrl } from 'config/api.config';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { ActorService } from 'services/ActorService';
-import { MovieService } from 'services/MovieService';
-import { IActor, IMovie} from 'shared/types/movie.types'
+import { IActor} from 'shared/types/movie.types'
 
 export interface IActorPage {
   actor:IActor;

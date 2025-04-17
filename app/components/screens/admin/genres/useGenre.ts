@@ -2,7 +2,7 @@ import { IAdminTableItem } from "components/ui/admin-table/admin-table.interface
 import { getAdminUrl, getGenreUrl } from "config/api.config"
 import { useDebounce } from "hooks/useDebounce"
 import { useRouter } from "next/router"
-import { ChangeEvent, useMemo, useState } from "react"
+import { ChangeEvent, useCallback, useMemo, useState } from "react"
 import { useMutation, useQuery } from "react-query"
 import { toastr } from "react-redux-toastr"
 import { GenreService } from "services/GenreService"
@@ -31,9 +31,9 @@ export const useGenre=() => {
 		}
 	);
 
-	const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
+	const handleSearch = useCallback((event: ChangeEvent<HTMLInputElement>) => {
 		setSearchTerm(event.target.value);
-	};
+	},[]);
 
     const {mutateAsync:createAsync} = useMutation('create genre', () => 
         GenreService.create(),{
@@ -66,5 +66,5 @@ export const useGenre=() => {
         createAsync,
         handleSearch,
         searchTerm
-    }), [queryData, deleteAsync,handleSearch,searchTerm])
+    }), [queryData, deleteAsync,handleSearch,searchTerm, createAsync])
 }

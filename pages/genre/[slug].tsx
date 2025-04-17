@@ -16,7 +16,7 @@ export interface IGenrePage {
 const GenrePage:NextPage<IGenrePage> = ({movies,genre}) => {
 
   return (
-      movies? <FreshMovie title='Movies' movies={movies}/>: <>Not found</>
+      genre.movies? <FreshMovie title={`${genre.name} movies`} movies={movies}/> : <div>Not found</div>
   )
 }
 

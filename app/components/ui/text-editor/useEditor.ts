@@ -17,8 +17,14 @@ export const useEditor = () => {
         console.log(stylesText)
     },[stylesText])
 
-    const heightText = useCallback(() => {
+    const italicText = useCallback(() => {
         const styleText = 'italic'
+        setStylesText(styleText)
+        console.log(stylesText)
+    },[stylesText])
+
+    const heightText = useCallback(() => {
+        const styleText = 'text-2xl'
         setStylesText(styleText)
         console.log(stylesText)
     },[stylesText])
@@ -40,6 +46,7 @@ export const useEditor = () => {
         handleTerm,
         stylesText,
         heightText,
-        handleKeyDown
-    }),[weightText,handleTerm,heightText,stylesText,term,handleKeyDown])
+        handleKeyDown,
+        italicText
+    }),[weightText,handleTerm,heightText,stylesText,term,handleKeyDown,italicText])
 }

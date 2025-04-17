@@ -12,7 +12,12 @@ export const GenreService = {
     },
     async getAll(searchTerm?:string){
         return axiosDefault.get<IGenre[]>(getGenreUrl(''), {
-            params: searchTerm ? { searchTerm } : {}
+            params: searchTerm ? { 
+                searchTerm 
+            } : 
+            {
+
+            }
         })
     },
     async getById(genreId:string){
