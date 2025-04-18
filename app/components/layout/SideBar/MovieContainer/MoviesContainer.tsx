@@ -7,7 +7,7 @@ import { MovieService } from 'services/MovieService'
 const MoviesContainer:FC = () => {
 
   const {data, isLoading} = useQuery(['favorite list'], () => 
-    MovieService.getAll(),{
+    MovieService.getPopular(),{
      select:({data})=> data.map((movie)=>({
       name:movie.name,
       poster:movie.poster,

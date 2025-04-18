@@ -7,15 +7,15 @@ import { ISlide } from './slider.types'
 import { useSlider } from './useSlider'
 
 interface ISlider {
-	buttonTitle?: string
-	slides: ISlide[]
+	buttonTitle?: string;
+	slides: ISlide[];
+	countOpened:number;
 }
 
-const Slider: FC<ISlider> = ({ buttonTitle, slides }) => {
+const Slider: FC<ISlider> = ({ buttonTitle, slides,countOpened }) => {
 	const { handleClick, index, isNext, isPrev, slideIn } = useSlider(
 		slides.length
 	)
-
 	return (
 		<div className={styles.slider}>
 			{isPrev && (

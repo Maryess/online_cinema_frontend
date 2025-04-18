@@ -1,7 +1,17 @@
 .placeholder{
-    @apply flex absolute w-full h-full top-0 left-0 bg-gray-800;
+    @apply flex flex-col w-full h-full top-0 left-6 bg-gray-800 h-20;
 
-    >div{
-        @apply m-auto text-center;
+    >span{
+        @apply m-auto text-center text-white;
+
+       
+    }
+
+    >a{
+        @apply text-center mb-2;
+
+        >button{
+            @apply text-white bg-gray-900 rounded-image border-gray-950 outline-none w-20;
+        }
     }
 }

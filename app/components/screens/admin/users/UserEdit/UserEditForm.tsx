@@ -22,7 +22,7 @@ const UserEditForm:FC = () => {
           <div className={styles.fields}>
             <Field
               {...register('email', {
-            required: 'Email is required!',
+            required: 'Email is required!'
             
             })}
             placeholder="Email"

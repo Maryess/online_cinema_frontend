@@ -36,6 +36,9 @@ export const MovieService = {
     async getBySlug(slug:string){
         return axiosDefault.get<IMovie>(getMovieUrl(`/${slug}`))
     },
+    async getPopular(){
+        return axiosDefault.get<IMovie[]>(getMovieUrl(`/popular-movie`))
+    },
     async updateCount(movieId:string){
         return axiosDefault.put<string>(getMovieUrl(`/${movieId}/count`))
     },
@@ -46,7 +49,7 @@ export const MovieService = {
 						searchTerm,
 				  }
 				: {
-                    
+
                 },
 		})
 	}

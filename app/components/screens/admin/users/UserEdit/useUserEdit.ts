@@ -7,6 +7,7 @@ import { toastr } from "react-redux-toastr"
 import { getAdminUrl } from "config/api.config"
 
 export const useUserEdit = (setValue:UseFormSetValue<IUserEditInput>) => {
+        
         const {push,query} = useRouter()
     
         const userId = String(query.id)
