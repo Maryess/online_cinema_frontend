@@ -5,16 +5,16 @@ import MaterialIcon from '../MaterialIcon'
 import cn from 'classnames'
 import { ITextEditor } from './text-editor.interface'
 
-const TextEditor:FC<ITextEditor> = ({buttons}) => {
+const TextEditor:FC= () => {
 
-    const {handleTerm,stylesText} = useEditor()
+    const {handleTerm,stylesText,weightText,heightText,italicText} = useEditor()
 
   return (
     <div className={styles.editor}>
         <div className={styles.header}>
-          {buttons.map((el)=>(
-            <button key={el.name} onClick={el.onCLick}> <MaterialIcon name={el.iconName}/></button>
-          ))}
+          <button onClick={weightText}> <MaterialIcon name="MdFormatBold"/></button>
+          <button onClick={italicText}> <MaterialIcon name="MdFormatItalic"/></button>
+          <button onClick={heightText}> <MaterialIcon name="MdTextFields"/></button>
         </div>
         <textarea onChange={handleTerm} className={cn(stylesText,styles.input)}></textarea>
         

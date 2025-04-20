@@ -9,7 +9,12 @@
       }
 
       .title{
-        @apply absolute bottom-2 text-white text-sm;
+        background-image: linear-gradient(to top,#020610 10%, #050b1c 20%, #091839 30%,transparent 50% );
+        @apply absolute bottom-0 h-20 w-full text-gray-300 text-sm rounded-image ;
+
+        >span{
+          @apply absolute bottom-0 truncate w-44;
+        }
       }
     }
 }

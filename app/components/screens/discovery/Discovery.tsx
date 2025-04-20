@@ -19,7 +19,7 @@ const Discovery:FC<IDiscoveryPage> = ({genres}) => {
                 <Link href={getGenreUrl(`/${el.slug}`)}>
                     <Image src={`${el.movies[0].bigPoster}`} width={200} height={300} alt={el.name} />
                     <div className={styles.title}>
-                    {el.name}
+                      <span>{el.name}</span>
                     </div>
             </Link>
             </div>

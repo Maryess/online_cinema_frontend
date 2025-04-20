@@ -9,7 +9,7 @@ const Gallery:FC<IGallery> = ({item}) => {
       {
             item.map((el)=>{
                 return <GalleryItem key={el.name} url={el.url} name={el.name} poster={el.poster}/>
-            })
+            }).slice(0,6)
         }
     </div>
   )

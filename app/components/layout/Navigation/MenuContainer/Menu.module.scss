@@ -26,9 +26,9 @@ $width-content:300px;
       >span{
       @apply ml-2;
       }
-
-     &.active{
-      @apply border-r-primary;
-      }
     } 
   }
+
+.active{
+  @apply border-r-primary border-r-2 text-gray-300;
+}

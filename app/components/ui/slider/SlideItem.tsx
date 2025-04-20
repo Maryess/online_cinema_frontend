@@ -16,15 +16,15 @@ const SlideItem: FC<ISlideItem> = ({ slide, buttonTitle = 'Watch' }) => {
 	return (
 		<div className={styles.slide}>
 			{slide.bigPoster && (
-				<Image
-					layout="fill"
-					className={styles.image}
-					src={slide.bigPoster}
-					alt={slide.name}
-					draggable={false}
-					unoptimized
-					priority
-				/>
+					<Image
+						className={styles.poster}
+						layout="fill"
+						src={slide.bigPoster}
+						alt={slide.name}
+						draggable={false}
+						unoptimized
+						priority
+					/>
 			)}
 			<div className={styles.content}>
 				<div className={styles.heading}>{slide.name}</div>

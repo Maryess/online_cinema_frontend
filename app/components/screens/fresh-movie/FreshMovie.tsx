@@ -19,9 +19,9 @@ const FreshMovie:FC<IFreshMoviePage> = ({movies, title}) => {
                 <Link href={el.url}>
                     <Image src={el.poster} width={200} height={300} alt={el.name || ''} />
                     <div className={styles.title}>
-                    {el.name}
+                      <span>{el.name}</span>
                     </div>
-            </Link>
+                </Link>
             </div>
             ))
         } 

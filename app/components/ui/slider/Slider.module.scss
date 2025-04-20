@@ -5,10 +5,13 @@
 
 	.slide {
 		@apply relative h-64 rounded-3xl overflow-hidden shadow-xl flex items-end;
-
+		/* .poster{
+			@apply relative h-full w-full;
+			
+		} */
 		.content {
-			@apply relative z-2 p-8;
-
+			@apply relative z-2 p-8 h-full w-60 border-none flex flex-col justify-end;
+			background-image: linear-gradient(to top right, #020610 10%, #050b1c 20%, #091839 30%,transparent 55% );
 			.heading {
 				@apply text-white uppercase text-xl font-semibold mb-1 text-shadow truncate;
 			}
@@ -18,7 +21,7 @@
 			}
 
 			.button {
-				@apply btn-primary p-2 px-10 rounded-image;
+				@apply btn-primary p-2 w-20 rounded-image;
 			}
 		}
 	}

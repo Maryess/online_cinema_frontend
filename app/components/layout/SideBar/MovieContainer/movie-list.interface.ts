@@ -3,7 +3,7 @@ import { IGenre, IMovie } from "shared/types/movie.types";
 export interface ISideBarMovie{
     name:string;
     poster:string;
-    genres:IGenre[]
+    genres:IGenre[];
     slug:string;
 }
 
