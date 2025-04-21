@@ -68,7 +68,7 @@ const ActorEditForm:FC = () => {
                                 }) => (
                                     <UploadFile
                                         placeholder={value}
-                                        folder='movies'
+                                        folder='actors'
                                         onChange={onChange}
                                         value={value}
                                     />

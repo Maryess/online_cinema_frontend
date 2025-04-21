@@ -9,13 +9,13 @@ import AdminTableHeader from 'components/ui/admin-table/AdminTableHeader'
 
 const ActorList:FC = () => {
 
-    const {data, isLoading, deleteAsync,createAsync} = useActor()
+    const {data, isLoading, deleteAsync,createAsync, handleSearch, searchTerm} = useActor()
    
   return (
    <Meta title='Create actor'>
         <AdminNavigation/>
         <Heading title='Actors' className='text-3xl mb-4'/>
-        <AdminTableHeader createHandler={createAsync} searchTerm='' handleSearch={()=>{}}/>
+        <AdminTableHeader createHandler={createAsync} searchTerm={searchTerm} handleSearch={handleSearch}/>
         <AdminTable tableItems={data || []} isLoading={isLoading} removeHandler={deleteAsync} />
    </Meta>
   )

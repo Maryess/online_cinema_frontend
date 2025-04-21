@@ -7,6 +7,7 @@ import { toastr } from "react-redux-toastr"
 import { getAdminUrl } from "config/api.config"
 
 export const useUserEdit = (setValue:UseFormSetValue<IUserEditInput>) => {
+        
         const {push,query} = useRouter()
     
         const userId = String(query.id)
@@ -26,14 +27,14 @@ export const useUserEdit = (setValue:UseFormSetValue<IUserEditInput>) => {
             enabled: !!query.id
         })
     
-        const {mutateAsync:updateAsync} = useMutation('update movie', (data:IUserEditInput)=>
+        const {mutateAsync:updateAsync} = useMutation('update user', (data:IUserEditInput)=>
         UserService.update(userId, data),{
             onSuccess(){
-                toastr.success('Update movie', 'Update successfully')
+                toastr.success('Update user', 'Update successfully')
                 push(getAdminUrl(`/users`))
             },
             onError(error) {
-                toastr.error(`${error}`, 'Update movie')
+                toastr.error(`${error}`, 'Update user')
             }
         }
         )

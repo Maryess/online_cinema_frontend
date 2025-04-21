@@ -1,7 +1,6 @@
 import { SubmitHandler, UseFormSetValue } from "react-hook-form"
 import { useMutation, useQuery } from "react-query"
 import { useRouter } from "next/router"
-import { GenreService } from "services/GenreService"
 import { toastr } from "react-redux-toastr"
 import { getAdminUrl } from "config/api.config"
 import { MovieService } from "services/MovieService"

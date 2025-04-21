@@ -1,7 +1,8 @@
 export interface ISlide {
-	id: string
-	bigPoster: string
-	name: string
-	subTitle?: string
-	link: string
+	id: string;
+	bigPoster: string;
+	name: string;
+	subTitle?: string;
+	link: string;
+	countOpened:number;
 }

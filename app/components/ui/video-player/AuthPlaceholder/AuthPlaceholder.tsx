@@ -5,7 +5,7 @@ import AuthButton from './AuthButton'
 const AuthPlaceholder:FC<{slug:string}> = ({slug}) => {
   return (
     <div className={styles.placeholder}>
-        <div>You need to sing in before you will watch </div>
+        <span>You need to login before you will can watch </span>
         <AuthButton slug={slug}/>
     </div>
   )

@@ -3,7 +3,7 @@ import { useState } from 'react'
 export const useSlider = (length: number) => {
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [slideIn, setSlideIn] = useState(true)
-
+	console.log(currentIndex)
 	const isExistsNext = currentIndex + 1 < length
 	const isExistsPrev = currentIndex ? currentIndex - 1 < length : false
 

@@ -11,9 +11,12 @@ const MenuItem:FC<{itemMenu:IMenuItem}>=({itemMenu}) => {
     const {asPath} = useRouter()
 
   return (
-        <li className={cn({
-            [styles.active]: asPath === itemMenu.link
-            }, styles.li)}>
+        <li className={cn(
+            styles.li,
+            {
+              [styles.active]: asPath === itemMenu.link
+            }
+          )}>
             <Link href={itemMenu.link} onClick={itemMenu.onClick}>
                 <div className={styles.link_content}>
                 <MaterialIcon 

@@ -21,7 +21,7 @@ const Menu:FC<{menu:IMenu}> = ({menu : {title,item}}) => {
               name:el.name,
               link:el.link
             }}
-            />
+          />
       })}
       {title === 'General' ? <DynamicAuthItems/>: null}
      </ul>

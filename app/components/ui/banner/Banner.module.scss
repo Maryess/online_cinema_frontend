@@ -1,7 +1,17 @@
-.banner{
+.bannerMovie{
     @apply w-full h-40 text-white relative;
 
     >img{
         @apply shrink-0 object-cover opacity-35 rounded-layout;
+    }
+}
+
+.bannerActor{
+    @apply w-full flex justify-between ;
+
+    .photo{
+        >img{
+            @apply rounded-layout;
+        }
     }
 }

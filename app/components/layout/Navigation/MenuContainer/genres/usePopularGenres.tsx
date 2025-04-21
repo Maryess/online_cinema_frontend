@@ -10,7 +10,7 @@ export const usePopularGenres = () => {
         GenreService.getAll(),{
             select: ({data}) => data.map((genre => ({
                 icon:'Md12Mp',
-                link:getGenreUrl(genre.slug),
+                link:getGenreUrl(`/${genre.slug}`),
                 name:genre.name
             } as IMenuItem) )).splice(0, 4)
         })

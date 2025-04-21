@@ -21,9 +21,9 @@ export const MovieService = {
        })
     },
 
-   async update(movieId:string, data:IMovieEditInput){
-           return axiosDefault.put<string>(getMovieUrl(`/${movieId}`), data)
-       },
+    async update(movieId:string, data:IMovieEditInput){
+        return axiosDefault.put<string>(getMovieUrl(`/${movieId}`), data)
+    },
 
     async deleteMovieById(movieId:string){
         return axiosDefault.delete<string>(getMovieUrl(`/${movieId}`))
@@ -36,14 +36,21 @@ export const MovieService = {
     async getBySlug(slug:string){
         return axiosDefault.get<IMovie>(getMovieUrl(`/${slug}`))
     },
-
+    async getPopular(){
+        return axiosDefault.get<IMovie[]>(getMovieUrl(`/popular-movie`))
+    },
+    async updateCount(movieId:string){
+        return axiosDefault.put<string>(getMovieUrl(`/${movieId}/count`))
+    },
     async getAll(searchTerm?: string) {
 		return axiosDefault.get<IMovie[]>(getMovieUrl(``), {
 			params: searchTerm
 				? {
 						searchTerm,
 				  }
-				: {},
+				: {
+
+                },
 		})
 	}
 }

@@ -16,7 +16,7 @@ export const useMovie=() => {
                         ({
                             id:movie.id,
                             editUrl:getAdminUrl(`/movie/edit/${movie.id}`),
-                            items: [movie.name, movie.country, movie.slug]
+                            items: [movie.name, movie.country, `${movie.countOpened} opened`]
                 }))
     })
 

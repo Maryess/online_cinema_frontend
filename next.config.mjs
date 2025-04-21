@@ -21,7 +21,8 @@ const nextConfig  = {
                 destination:"http://localhost:4200/uploads/:path*"
             }
 		];
-	},
+	}
+
 };
 
 export default nextConfig;

@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { CSSTransition } from 'react-transition-group'
-
 import SlideArrow from './SlideArrow/SlideArrow'
 import SlideItem from './SlideItem'
 import styles from './Slider.module.scss'
@@ -8,21 +7,20 @@ import { ISlide } from './slider.types'
 import { useSlider } from './useSlider'
 
 interface ISlider {
-	buttonTitle?: string
-	slides: ISlide[]
+	buttonTitle?: string;
+	slides: ISlide[];
+	countOpened:number;
 }
 
-const Slider: FC<ISlider> = ({ buttonTitle, slides }) => {
+const Slider: FC<ISlider> = ({ buttonTitle, slides,countOpened }) => {
 	const { handleClick, index, isNext, isPrev, slideIn } = useSlider(
 		slides.length
 	)
-
 	return (
 		<div className={styles.slider}>
 			{isPrev && (
 				<SlideArrow variant="left" clickHandler={() => handleClick('prev')} />
 			)}
-
 			<CSSTransition
 				in={slideIn}
 				timeout={300}

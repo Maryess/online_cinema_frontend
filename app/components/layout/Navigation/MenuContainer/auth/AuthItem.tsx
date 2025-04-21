@@ -2,7 +2,7 @@ import { FC } from 'react'
 import MenuItem from '../MenuItem'
 import { useAuth } from 'hooks/useAuht'
 import LogoutButton from './LogoutButton'
-import { getAdminUrl } from 'config/api.config'
+import { getAdminUrl, getUserUrl } from 'config/api.config'
 
 const AuthItem:FC = () => {
 const {user} = useAuth()

@@ -7,7 +7,7 @@ import Image from 'next/image'
 const GalleryItem:FC<IGalleryItem> = ({poster,url,name}) => {
   return (
         <Link href={url}>
-            <Image src={poster} height={150} width={100} alt={name || ''} />
+            <Image src={poster} height={80} width={100} alt={name || ''} />
             <div className={styles.title}>
             </div>
         </Link>

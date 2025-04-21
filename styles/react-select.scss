@@ -1,4 +1,6 @@
 /* React Select */
+@use "sass:color";
+
 .custom-select {
 	&__control {
 		background-color: transparent !important;
@@ -64,7 +66,7 @@
 	&__option {
 		cursor: pointer !important;
 		&--is-focused {
-			background-color: lighten(#292a2e, 8%) !important;
+			background-color:  color.adjust(#292a2e, $lightness: 8%) !important;
 		}
 	}
 
