@@ -26,7 +26,7 @@ const Banner:FC<IBanner> = ({type,imagePath, info}) => {
           <Image  
               alt='' 
               src={`${imagePath}`}
-              height={250} 
+              height={100} 
               width={200}
               draggable={false}
               unoptimized

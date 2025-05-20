@@ -1,6 +1,7 @@
 
 import SingleMovie from 'components/screens/single-movie/SingleMovie';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { useEffect } from 'react';
 import { MovieService } from 'services/MovieService';
 import { IMovie } from 'shared/types/movie.types'
 
@@ -10,6 +11,9 @@ export interface IMoviePage {
 
 
 const MoviePage:NextPage<IMoviePage> = ({movie}) => {
+  useEffect(()=>{
+			
+  },[])
   console.log(movie)
   return (
       movie?  <SingleMovie movie={movie} /> : <>Not found</>

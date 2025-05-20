@@ -17,7 +17,7 @@ const DynamicSelect = dynamic(() => import("components/ui/select/Select"), {
 })
 
 const MovieEditForm:FC = () => {
-
+    
     const {
             handleSubmit,
             register,
@@ -25,8 +25,9 @@ const MovieEditForm:FC = () => {
             setValue,
             getValues,
             control,
+
     } = useForm<IMovieEditInput>({
-            mode: 'onChange',
+            mode: 'onChange'
     })
 
 
@@ -42,7 +43,7 @@ const MovieEditForm:FC = () => {
                 <div className={styles.headerFields}>
                     <Field
                     {...register('name', {
-                required: 'Name is required!',
+                    required: 'Name is required!',
                 
                     })}
                     placeholder="Name"
@@ -60,7 +61,7 @@ const MovieEditForm:FC = () => {
                 <div className={styles.centerFields}>
                 <Field
                     {...register('country', {
-                required: 'Country is required!',
+                    required: 'Country is required!',
                 
                     })}
                     placeholder="Country"

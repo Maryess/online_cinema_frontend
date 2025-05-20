@@ -9,6 +9,7 @@ const SideBar:FC = () => {
       <Search/>
       <MoviesContainer/>
     </div>
+    
 }
 
 export default SideBar

@@ -5,13 +5,14 @@
         @apply shrink-0 object-cover opacity-35 rounded-layout;
     }
 }
+.bannerActor {
+  @apply w-full flex items-center gap-2 p-4 rounded-2xl shadow-xl border border-gray-700 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900;
 
-.bannerActor{
-    @apply w-full flex justify-between ;
+  .photo {
+    @apply flex-shrink-0 p-1 rounded-full bg-gradient-to-br shadow-inner;
 
-    .photo{
-        >img{
-            @apply rounded-layout;
-        }
+    > img {
+      @apply w-32 h-32 object-cover rounded-full border-none;
     }
+  }
 }
