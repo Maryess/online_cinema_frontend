@@ -2,7 +2,6 @@ import { IAuthResponse, ITokens } from "store/user/user.interface";
 import Cookies from 'js-cookie'
 
 export const saveTokensStorage =(data:ITokens) => {
-
     console.log('Access Token:', data.accessToken);
     console.log('Refresh Token:', data);
     Cookies.set('accessToken',data.accessToken)

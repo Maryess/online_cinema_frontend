@@ -24,4 +24,6 @@ import { IHome } from "../../../../pages"
    ) 
  }
 
- export default Home
+export default Home
+ 
+

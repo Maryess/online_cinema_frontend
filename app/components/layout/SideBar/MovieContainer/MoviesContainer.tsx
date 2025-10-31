@@ -23,16 +23,16 @@ const MoviesContainer:FC = () => {
     }
   )
 
-  const {data:favoriteMovie,isLoading:favoriteLoading} = useQuery(['favorite movie'], () => 
-    UserService.getFavoritesMovies(),{
-     select:({data})=> data.map((movie)=>({
-      name:movie.name,
-      poster:movie.poster,
-      genres: movie.genres.map((genre)=>genre).splice(0,1),
-      slug:movie.slug
-     }))
-    }
-  )
+  // const {data:favoriteMovie,isLoading:favoriteLoading} = useQuery(['favorite movie'], () => 
+  //   UserService.getFavoritesMovies(),{
+  //    select:({data})=> data.map((movie)=>({
+  //     name:movie.name,
+  //     poster:movie.poster,
+  //     genres: movie.genres.map((genre)=>genre).splice(0,1),
+  //     slug:movie.slug
+  //    }))
+  //   }
+  // )
 
   return (
     <div className={styles.container}>
@@ -41,7 +41,7 @@ const MoviesContainer:FC = () => {
         <button className={styles.button}>See more</button>
       </div>
       <div>
-        <MovieList title='Favorites' movies={favoriteMovie || []}/>
+        <MovieList title='Favorites' movies={[]}/>
         <button className={styles.button}>See more</button>
      </div>
     </div>

@@ -1,26 +1,27 @@
-.infoMovie{
-    @apply text-white absolute bottom-0 px-6;
+.infoMovie {
+	@apply text-white absolute bottom-0 px-6;
 
-    >h3{
-        @apply text-4xl;
-    }
-    .information{
-        @apply mb-3 mt-1 text-xs text-gray-300;
-    }
-    .genres, .actors{
-        @apply text-sm text-gray-500;
-    }
+	> h3 {
+		@apply text-4xl;
+	}
+	.information {
+		@apply mb-3 mt-1 text-xs text-gray-300;
+	}
+	.genres,
+	.actors {
+		@apply text-sm text-gray-500;
+	}
 }
 
-.description{
-    @apply text-gray-300 text-base mt-4 bg-gray-950 rounded-image p-2;
+.description {
+	@apply text-gray-300 text-base mt-4 bg-gray-950 rounded-image p-2;
 }
 
-.infoActor{
-    >h3{
-       @apply text-4xl text-white;
-    }
-    .information{
-        @apply text-gray-500
-    }
+.infoActor {
+	> h3 {
+		@apply text-4xl text-white;
+	}
+	.information {
+		@apply text-gray-500;
+	}
 }

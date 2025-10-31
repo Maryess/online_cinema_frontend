@@ -1,7 +1,5 @@
 import { FC } from 'react'
-import CountUser from './CountUser'
 import styles from '../Admin.module.scss'
-import CountMovie from './CountMovie'
 import { useQuery } from 'react-query'
 import { MovieService } from 'services/MovieService'
 import { UserService } from 'services/UserService'
@@ -31,7 +29,6 @@ const Statistics:FC = () => {
     <div className={styles.statistics}>
       {movieLoading ? <SkeletonLoader count={1}/> : <CountEntity dataCount={users} title='users'/>}
       {userLoading ? <SkeletonLoader count={1}/> : <CountEntity dataCount={movies} title='movies'/>}
-      
     </div>
   )
 }

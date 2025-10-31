@@ -1,33 +1,40 @@
-.videoPlayer{
-    @apply mt-12 rounded-2xl overflow-hidden shadow-xl relative animate-fade;
+.videoPlayer {
+	@apply mt-12 relative rounded-2xl overflow-hidden shadow-2xl animate-fade bg-black;
 
-    .video{
-        @apply rounded-layout;
-    }
-    .actions{
-        @apply flex absolute bottom-1 left-4;
-        .buttons{
-            >button{
-                @apply ml-1;
-                >svg{
-                    @apply text-gray-500 text-2xl ml-2 ;
-                }
-            }
+	.video {
+		@apply w-full rounded-t-2xl;
+	}
 
-        }
+	.videoFooter {
+		@apply bg-gray-900 h-14;
+	}
 
-        .time{
-            @apply flex text-white ml-2;
+	.progress {
+		@apply absolute bottom-14 left-4 right-4 h-1 bg-gray-700/50 rounded;
 
-            >p{
-                @apply ml-1 text-sm text-gray-500;
-            }
-        }
-        
-    }
-    .progress{
-        @apply absolute left-4 right-4 bottom-10;
-        .progressBar{
-        @apply  bg-gray-600 h-1 ;}
-    }
+		.progressBar {
+			@apply bg-gray-500 h-full rounded transition-all duration-200 ease-in-out;
+		}
+	}
+
+	.actions {
+		@apply absolute bottom-0 w-full flex items-center justify-between px-4 py-2 bg-gray-900/80 backdrop-blur-md;
+
+		.buttons {
+			@apply flex items-center gap-2;
+
+			> button {
+				@apply flex items-center justify-center text-white bg-gray-800 hover:bg-gray-700 transition-colors duration-200 p-2 rounded-full;
+
+				> svg {
+					@apply text-xl;
+				}
+			}
+		}
+
+		.time {
+			@apply flex items-center gap-1 text-sm text-gray-300 font-mono;
+		}
+	}
 }
+

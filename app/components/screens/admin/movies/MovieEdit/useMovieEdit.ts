@@ -12,7 +12,7 @@ export const useMovieEdit = (setValue:UseFormSetValue<IMovieEditInput>) => {
 
     const movieId = String(query.id)
 
-    const {isLoading} = useQuery(['get movie', movieId], ()=>
+    const {data, isLoading} = useQuery(['get movie', movieId], ()=>
     MovieService.getById(movieId),
     {
         onSuccess({data}) {
@@ -48,5 +48,5 @@ export const useMovieEdit = (setValue:UseFormSetValue<IMovieEditInput>) => {
         await updateAsync(data)
     }
 
-    return {isLoading, onSubmit}
+    return {isLoading, onSubmit,data}
 }
