@@ -9,3 +9,4 @@ export interface IVideoElement extends HTMLVideoElement {
 	mozRequestFullscreen?: () => void;
 	webkitRequestFullscreen?: () => void;
 }
+

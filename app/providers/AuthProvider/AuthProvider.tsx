@@ -18,7 +18,6 @@ const AuthProvider: FC<TypeComponentAuthFields> = ({
   const { logout, checkAuth } = useActions()
   const { pathname } = useRouter()
 
-  // Мемоизация функций
   const stableCheckAuth = useCallback(() => {
     const accessToken = Cookies.get('accessToken')
     if (accessToken) checkAuth()
@@ -28,12 +27,10 @@ const AuthProvider: FC<TypeComponentAuthFields> = ({
     logout()
   }, [logout])
 
-  // Эффект для проверки авторизации
   useEffect(() => {
     stableCheckAuth()
   }, [stableCheckAuth])
 
-  // Эффект для выхода при отсутствии refreshToken
   useEffect(() => {
     const refreshToken = Cookies.get('refreshToken')
     if (!refreshToken && user) {
@@ -46,4 +43,5 @@ const AuthProvider: FC<TypeComponentAuthFields> = ({
     : <DynamicCheckRole Component={{ isOnlyAdmin, isOnlyUser }}>{children}</DynamicCheckRole>
 }
 
-export default AuthProvider
+export default AuthProvider;
+

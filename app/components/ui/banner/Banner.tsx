@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { FC } from "react";
 import styles from "./Banner.module.scss";
-import Image from "next/image";
 import Info from "./Info/Info";
 import { IBanner } from "./banner.interface";
 

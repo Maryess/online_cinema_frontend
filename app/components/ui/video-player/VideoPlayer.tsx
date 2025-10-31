@@ -24,7 +24,7 @@ const VideoPlayer: FC<IVideoPlayer> = ({
 	} = useVideo();
 
 	const { user } = useAuth();
-	console.log(subtitleSource);
+	// console.log(subtitleSource);
 	return (
 		<div className={styles.videoPlayer}>
 			{user ? (
@@ -35,13 +35,13 @@ const VideoPlayer: FC<IVideoPlayer> = ({
 						src={`${videoSource}#t=0.5`}
 						preload="metadata"
 					>
-						<track
+						{/* <track
 							src={subtitleSource}
 							kind="subtitles"
 							srcLang="en"
 							label="English"
 							default
-						/>
+						/> */}
 					</video>
 
 					<div className={styles.videoFooter}>
